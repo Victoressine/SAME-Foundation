@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAME Foundation.</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Favicon (Logo in Browser Tab) -->
+    <link rel="icon" type="image/png" href="images/same.jpeg">
+
+    <style>
+        @keyframes slidefade {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+                /* start from right */
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(0);
+                /* center */
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(-100px);
+                /* fade left */
+            }
+        }
+
+        .animate-slidefade {
+            animation: slidefade 2.5s ease forwards;
+        }
+    </style>
+
+</head>
+
+<body class="font-sans text-gray-800">
+
+    <!-- Preloader Overlay -->
+    <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <img src="images/same.jpeg" alt="School Logo" class="w-32 h-32 object-contain animate-slidefade" />
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="bg-slate-100 shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+
+            <!-- Logo -->
+            <div class="flex items-center justify-start space-x-4">
+                <img src="images/same.jpeg" alt=" Logo" class="h-20 object-contain">
+                <h1
+                    class="text-lg sm:text-xl md:text-3xl lg:text-3xl xl:text-4xl font-extrabold bg-gradient-to-r from-[#4B1E23] via-green-700 to-yellow-400 bg-clip-text text-transparent text-center">
+                    S.A.M.E Foundation
+                </h1>
+
+            </div>
+
+            <!-- Desktop Navigation -->
+            <!-- Home -->
+            <nav class="hidden lg:flex space-x-6 text-base font-semibold">
+                <a href="index.html" class="relative group text-[#4B1E23] hover:text-green-700">
+                    Home
+                    <span
+                        class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                    </span>
+                </a>
+
+                <!-- About -->
+                <div class="relative group">
+                    <a href="#about" class="text-[#4B1E23] hover:text-green-700 inline-flex items-center">
+                        About
+                        <svg class="ml-1 w-3 h-3 text-gray-600 group-hover:text-green-600 transition-transform duration-500 transform group-hover:rotate-180"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-40 bg-green-700 text-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-out z-10">
+                        <a href="missions.html" class="block px-4 py-2 hover:bg-green-100 hover:text-green-700">Mission
+                            & Vision</a>
+                        <a href="leadership.html"
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-green-700">Leadership</a>
+                    </div>
+                </div>
+
+                <!-- Programs -->
+                <a href="programs.html"
+                    class="relative group text-[#4B1E23] hover:text-green-700 inline-flex items-center">
+                    Programs
+                    <span
+                        class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                    </span>
+                </a>
+
+                <!-- Gallery -->
+                <a href="gallery.html"
+                    class="relative group text-[#4B1E23] hover:text-green-700 inline-flex items-center">
+                    Gallery
+                    <span
+                        class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                    </span>
+                </a>
+
+                <!-- Contact -->
+                <a href="index.html#contact" class="relative group text-[#4B1E23] hover:text-green-700">
+                    Contact
+                    <span
+                        class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                    </span>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="lg:hidden text-3xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile/Tablet Menu -->
+        <!-- Home -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-gray-50 border-t px-4 py-4 space-y-2 font-semibold">
+            <a href="index.html" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">Home</a>
+
+            <!-- About -->
+            <div>
+                <button class="w-full flex justify-between items-center px-2 py-2 text-[#4B1E23] hover:text-green-600"
+                    onclick="toggleDropdown('about-dropdown')">
+                    About
+                    <svg class="w-4 h-4 transition-transform" id="about-dropdown-icon" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="about-dropdown" class="hidden pl-4 mt-1 space-y-1">
+                    <a href="missions.html" class="block px-2 py-1 text-[#4B1E23] hover:bg-green-100 rounded">Mission &
+                        Vision</a>
+                    <a href="leadership.html"
+                        class="block px-2 py-1 text-[#4B1E23] hover:bg-green-100 rounded">Leadership</a>
+                </div>
+            </div>
+
+            <!-- programs -->
+            <a href="programs.html" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">
+                Programs
+            </a>
+
+            <!-- Gallery -->
+            <a href="gallery.html" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">
+                Gallery
+            </a>
+
+            <!-- Contact -->
+            <a href="index.html#contact" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- Merged: Mobile menu, Preloader hide, AOS loader + init -->
+    <script>
+        (function () {
+            // Mobile menu
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+            }
+
+            // Dropdown mobile menu
+            window.toggleDropdown = function (id) {
+                const dropdown = document.getElementById(id);
+                const icon = document.getElementById(id + '-icon');
+                if (dropdown) dropdown.classList.toggle("hidden");
+                if (icon) icon.classList.toggle("rotate-180");
+            };
+
+            // Helper: ensure AOS library is present, load dynamically if needed
+            function ensureAOS(callback) {
+                if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
+                    return callback();
+                }
+                // load AOS dynamically and call callback on load
+                const s = document.createElement('script');
+                s.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+                s.async = true;
+                s.onload = () => callback();
+                s.onerror = () => {
+                    console.warn('AOS failed to load from CDN. Check network / CSP.');
+                    // still call callback to avoid blocking site
+                    callback();
+                };
+                document.head.appendChild(s);
+            }
+
+            function initAOS() {
+                try {
+                    if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
+                        AOS.init({ duration: 1000, once: true, offset: 100 });
+                        // ensure AOS recalculates positions after load and after layout shifts
+                        setTimeout(() => AOS.refresh(), 50);
+                    } else {
+                        // nothing to init (AOS didn't load), silently continue
+                    }
+                } catch (e) {
+                    console.error('AOS init error:', e);
+                }
+            }
+
+            // -- Preloader hide logic -- waits for full load, waits animation length, then hides overlay &
+            // initializes AOS (so animations run after preloader removed)
+            function hidePreloaderAndInitAOS() {
+                const pre = document.getElementById('preloader');
+                // duration must match your animation (2.5s) - tweak if you changed that
+                const animationWait = 2500;
+                if (!pre) {
+                    // still ensure AOS is available and init
+                    ensureAOS(initAOS);
+                    return;
+                }
+
+                // Wait the animation duration, then fade preloader out and init AOS
+                setTimeout(() => {
+                    pre.style.opacity = '0';
+                    pre.style.transition = 'opacity 0.6s ease';
+                    setTimeout(() => {
+                        pre.style.display = 'none';
+                        ensureAOS(initAOS);
+                    }, 600);
+                }, animationWait);
+            }
+
+            if (document.readyState === 'complete') {
+                hidePreloaderAndInitAOS();
+            } else {
+                window.addEventListener('load', hidePreloaderAndInitAOS);
+            }
+
+        })();
+    </script>
+
+    <!-- Hero -->
+    <section class="relative bg-[#4B1E23] text-white py-20 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold text-green-700 mb-4">
+                Our History, Mission & Vision
+            </h1>
+            <p class="text-lg md:text-xl text-yellow-400">
+                Discover the values and principles that guide SAME Foundation.
+            </p>
+        </div>
+    </section>
+
+    <!-- History -->
+    <section class="py-16 bg-slate-100" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="p-6 sm:p-10 rounded-2xl shadow-sm bg-[#4B1E23] transition-transform hover:-translate-y-2 hover:shadow-lg">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center text-green-700">
+                    Our Story & Heritage
+                </h2>
+
+                <!-- Line with Icon -->
+                <div class="flex items-center justify-center mb-6">
+                    <div class="flex-grow border-t border-green-700"></div>
+                    <div class="mx-4 text-green-700">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="flex-grow border-t border-green-700"></div>
+                </div>
+
+                <p class="text-yellow-400 mb-4 text-base sm:text-lg md:text-xl text-center">
+                    Word of Faith Christian School was established to provide quality Christ-centered education
+                    rooted in academic excellence, discipline, and moral integrity. Our heritage is built on
+                    nurturing students to grow in knowledge, faith, and leadership, preparing them to excel in
+                    every sphere of life.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-16 bg-slate-100" data-aos="fade-down">
+        <div class="max-w-7xl mx-auto grid gap-6 md:grid-cols-2 px-6">
+
+            <!-- Mission Box -->
+            <div
+                class="p-6 rounded-2xl shadow-sm bg-[#4B1E23] flex flex-col transition-transform hover:-translate-y-2 hover:shadow-lg">
+                <h2 class="text-2xl lg:text-3xl font-bold mb-4 text-center text-green-700">Our Mission</h2>
+
+                <!-- Line with Icon -->
+                <div class="flex items-center justify-center mb-2">
+                    <div class="flex-grow border-t border-green-700"></div>
+                    <div class="mx-4 text-green-700">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="flex-grow border-t border-green-700"></div>
+                </div>
+
+                <p class="text-base md:text-lg text-yellow-400 leading-relaxed">
+                    To provide a holistic Christian education that develops the mind, body, and spirit.
+                    We are committed to empowering students with academic knowledge, practical skills,
+                    and biblical values to influence society positively.
+                </p>
+            </div>
+
+            <!-- Vision Box -->
+            <div
+                class="p-6 rounded-2xl shadow-sm bg-[#4B1E23] flex flex-col transition-transform hover:-translate-y-2 hover:shadow-lg">
+                <h2 class="text-2xl lg:text-3xl font-bold mb-4 text-center text-green-700">Our Vision</h2>
+
+                <!-- Line with Icon -->
+                <div class="flex items-center justify-center mb-2">
+                    <div class="flex-grow border-t border-green-700"></div>
+                    <div class="mx-4 text-green-700">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="flex-grow border-t border-green-700"></div>
+                </div>
+
+                <p class="text-base md:text-lg text-yellow-400 leading-relaxed">
+                    To be a distinguished Christian school known for academic excellence, strong moral values,
+                    and spiritual growth, raising future leaders who will impact the world with wisdom,
+                    creativity, and godly character.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#4B1E23] text-white py-12 mt-16 relative" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
+
+                <!-- Logo + Write-up -->
+                <div>
+                    <img src="images/same.jpeg" alt="School Logo" class="w-28 mx-auto md:mx-0 mb-4">
+                    <h3 class="text-lg font-semibold text-yellow-400">S.A.M.E Foundation</h3>
+                    <p class="text-green-700 mt-2 text-1xl">
+                        "Mott"
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-yellow-400">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+                        <li><a href="programs" class="hover:text-yellow-400">Programs</a></li>
+                        <li><a href="impacts" class="hover:text-yellow-400">Impacts</a></li>
+                        <li><a href="gallery" class="hover:text-yellow-400">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-yellow-400">Contact Info</h3>
+                    </div>
+
+                    <!-- Phone 1 -->
+                    <div class="text-sm">
+                        <a href="tel:+233000000000"
+                            class="inline-flex items-center text-slate-100 hover:text-yellow-400 transition">
+                            <i class="fas fa-phone-alt mr-2 text-slate-100"></i> +233 (0) 000000000
+                        </a>
+                    </div>
+
+                    <!-- Phone 2 -->
+                    <div class="text-sm">
+                        <a href="tel:+233000000000"
+                            class="inline-flex items-center text-slate-100 hover:text-yellow-400 transition">
+                            <i class="fas fa-phone-alt mr-2 text-slate-100"></i> +233 (0) 000000000
+                        </a>
+                    </div>
+
+                    <!-- Address (not clickable) -->
+                    <div class="text-sm">
+                        <div class="inline-flex items-center text-slate-100">
+                            <i class="fas fa-map-marker-alt mr-2 text-red-500"></i>
+                            USA
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-yellow-400">Follow Us</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-yellow-400">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-yellow-400">Instagram</a></li>
+                        <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-yellow-400">Twitter</a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-yellow-400">LinkedIn</a></li>
+                        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-yellow-400">YouTube</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-10 border-t border-slate-100 pt-6 text-center text-slate-100 text-sm">
+                &copy; <span id="currentYear"></span> S.A.M.E Foundation. All Rights Reserved.
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <button id="scrollTopBtn"
+            class="fixed bottom-6 right-6 bg-yellow-400 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition hidden">
+            ↑
+        </button>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        // Auto year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Scroll to top button
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('hidden');
+            } else {
+                scrollBtn.classList.add('hidden');
+            }
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
