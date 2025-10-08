@@ -15,6 +15,8 @@
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Favicon (Logo in Browser Tab) -->
     <link rel="icon" type="image/png" href="images/same.jpeg">
 
@@ -46,7 +48,8 @@
 
 </head>
 
-<body class="font-sans text-gray-800">
+<body class="font-sans text-gray-800" style="font-family: 'Inter', sans-serif;">
+
 
     <!-- Preloader Overlay -->
     <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
@@ -523,7 +526,7 @@
                     <img src="images/foundation.jpeg" alt="Blog Image"
                         class="blog-img rounded-lg object-cover w-full h-64 cursor-pointer mb-4" />
                     <h4 class="font-semibold text-green-700">How local leadership transforms schools</h4>
-                    <p class="mt-2 text-sm text-[#4B1E23]">A short piece about how community-driven approaches improved
+                    <p class="mt-2 text-lg text-[#4B1E23]">A short piece about how community-driven approaches improved
                         attendance and learning outcomes.</p>
                 </article>
 
@@ -531,7 +534,7 @@
                     <img src="images/foundation.jpeg" alt="Blog Image"
                         class="blog-img rounded-lg object-cover w-full h-64 cursor-pointer mb-4" />
                     <h4 class="font-semibold text-green-700">Small grants, big impact</h4>
-                    <p class="mt-2 text-sm text-[#4B1E23]">Stories of women entrepreneurs who scaled their businesses
+                    <p class="mt-2 text-lg text-[#4B1E23]">Stories of women entrepreneurs who scaled their businesses
                         with our micro-grants.</p>
                 </article>
             </div>
@@ -715,9 +718,8 @@
                     <h3 class="text-lg font-semibold mb-3 text-yellow-400">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
-                        <li><a href="programs" class="hover:text-yellow-400">Programs</a></li>
-                        <li><a href="impacts" class="hover:text-yellow-400">Impacts</a></li>
-                        <li><a href="gallery" class="hover:text-yellow-400">Gallery</a></li>
+                        <li><a href="programs.html" class="hover:text-yellow-400">Programs</a></li>
+                        <li><a href="blog.html" class="hover:text-yellow-400">Blog</a></li>
                     </ul>
                 </div>
 
@@ -776,42 +778,37 @@
                 &copy; <span id="currentYear"></span> S.A.M.E Foundation. All Rights Reserved.
             </div>
         </div>
-
-        <!-- Scroll to Top Button -->
-        <button id="scrollTopBtn"
-            class="fixed bottom-6 right-6 bg-yellow-400 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition hidden">
-            ↑
-        </button>
     </footer>
 
-    <!-- JS -->
+    <!-- Back to Top Button -->
+    <a href="#hero" id="backToTop"
+        class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-yellow-400 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-700 transition-opacity duration-300 opacity-0 pointer-events-none z-50">
+        ↑
+    </a>
+
     <script>
         // Auto year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
 
-        // Scroll to top button
-        const scrollBtn = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollBtn.classList.remove('hidden');
+        // Back to Top button
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTop.classList.remove("opacity-0", "pointer-events-none");
+                backToTop.classList.add("opacity-100");
             } else {
-                scrollBtn.classList.add('hidden');
+                backToTop.classList.add("opacity-0", "pointer-events-none");
+                backToTop.classList.remove("opacity-100");
             }
         });
 
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+        backToTop.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
     </script>
 
