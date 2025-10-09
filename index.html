@@ -496,7 +496,7 @@
         <section id="blog" class="mt-8 bg-[#4B1E23] rounded-lg shadow px-6 py-8 scroll-smooth">
             <div class="flex items-center justify-between">
                 <h2 class="text-2xl text-green-700 font-bold" data-aos="fade-down">From Our Journal</h2>
-                <a href="blog.html" class="inline-block bg-yellow-400 text-[#4B1E23] text-sm font-semibold px-5 py-2 rounded-lg shadow-md 
+                <a href="blog.html" class="inline-block bg-yellow-400 text-[#4B1E23] text-sm font-semibold px-3 py-2 rounded-lg shadow-md 
            transition-all duration-300 animate-zoom hover:bg-green-700 hover:text-white hover:scale-105">
                     Visit Our Blog
                 </a>
@@ -522,62 +522,125 @@
             </div>
 
             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-down">
+                <!-- CARD 1 -->
                 <article class="p-4 border rounded-lg bg-slate-100">
                     <img src="images/foundation.jpeg" alt="Blog Image"
-                        class="blog-img rounded-lg object-cover w-full h-64 cursor-pointer mb-4" />
-                    <h4 class="font-semibold text-green-700">How local leadership transforms schools</h4>
+                        class="rounded-lg object-cover w-full h-64 mb-4" />
+                    <h4 class="font-semibold text-green-700">How Local Leadership Transforms Schools</h4>
                     <p class="mt-2 text-lg text-[#4B1E23]">A short piece about how community-driven approaches improved
                         attendance and learning outcomes.</p>
+                    <button onclick="openBlogModal(1)"
+                        class="mt-4 bg-green-700 hover:bg-yellow-400 text-white text-sm px-4 py-2 rounded transition">
+                        Read More
+                    </button>
                 </article>
 
+                <!-- CARD 2 -->
                 <article class="p-4 border rounded-lg bg-slate-100">
                     <img src="images/foundation.jpeg" alt="Blog Image"
-                        class="blog-img rounded-lg object-cover w-full h-64 cursor-pointer mb-4" />
-                    <h4 class="font-semibold text-green-700">Small grants, big impact</h4>
+                        class="rounded-lg object-cover w-full h-64 mb-4" />
+                    <h4 class="font-semibold text-green-700">Small Grants, Big Impact</h4>
                     <p class="mt-2 text-lg text-[#4B1E23]">Stories of women entrepreneurs who scaled their businesses
                         with our micro-grants.</p>
+                    <button onclick="openBlogModal(2)"
+                        class="mt-4 bg-green-700 hover:bg-yellow-400 text-white text-sm px-4 py-2 rounded transition">
+                        Read More
+                    </button>
                 </article>
-            </div>
-
-            <!-- Popup Viewer -->
-            <div id="blogImagePopup"
-                class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 backdrop-blur-sm">
-                <span id="closeBlogPopup"
-                    class="absolute top-6 right-8 text-white text-4xl font-bold cursor-pointer hover:text-red-500">&times;</span>
-                <img id="popupBlogImage" src="" alt="Expanded view"
-                    class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl object-contain" />
             </div>
         </section>
 
-        <!-- JavaScript -->
+        <!-- MODALS -->
+        <div id="blogModals">
+            <!-- Modal 1 -->
+            <div id="blogModal1" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+                <div class="bg-white rounded-2xl max-w-3xl w-full mx-4 overflow-hidden shadow-lg animate-fadeIn">
+                    <img src="images/foundation.jpeg" alt="Full Blog Image" class="w-full h-64 object-cover">
+                    <div class="p-6 pt-0 max-h-[70vh] overflow-y-auto relative">
+                        <div class="flex justify-between items-start sticky top-0 bg-white/90 backdrop-blur-sm z-10">
+                            <h2 class="text-2xl font-bold text-[#4B1E23]">How Local Leadership Transforms Schools
+                            </h2>
+                            <button onclick="closeBlogModal(1)"
+                                class="text-gray-400 hover:text-red-600 text-2xl leading-none">&times;</button>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Local leadership plays a vital role in transforming schools and shaping the future of
+                            education.
+                            When communities take ownership of their educational systems, the results are often more
+                            impactful
+                            and sustainable than those imposed externally. Principals, teachers, parents, and
+                            community leaders
+                            who understand the unique challenges can create practical, relevant solutions to improve
+                            attendance,
+                            learning outcomes, and community engagement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 2 -->
+            <div id="blogModal2" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+                <div class="bg-white rounded-2xl max-w-3xl w-full mx-4 overflow-hidden shadow-lg animate-fadeIn">
+                    <img src="images/foundation.jpeg" alt="Full Blog Image" class="w-full h-64 object-cover">
+                    <div class="p-6 pt-0 max-h-[70vh] overflow-y-auto relative">
+                        <div class="flex justify-between items-start sticky top-0 bg-white/90 backdrop-blur-sm z-10">
+                            <h2 class="text-2xl font-bold text-[#4B1E23]">Small Grants, Big Impact</h2>
+                            <button onclick="closeBlogModal(2)"
+                                class="text-gray-400 hover:text-red-600 text-2xl leading-none">&times;</button>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            SAME Foundation’s micro-grants have empowered women entrepreneurs to scale their
+                            businesses.
+                            Through targeted financial support, training, and mentorship, these entrepreneurs have
+                            grown their
+                            operations, created jobs, and contributed to the local economy, demonstrating the power
+                            of small,
+                            community-focused investments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JS -->
         <script>
-            const blogImages = document.querySelectorAll('.blog-img');
-            const blogPopup = document.getElementById('blogImagePopup');
-            const popupBlogImage = document.getElementById('popupBlogImage');
-            const closeBlogPopup = document.getElementById('closeBlogPopup');
+            function openBlogModal(id) {
+                document.getElementById(`blogModal${id}`).classList.remove('hidden');
+                document.getElementById(`blogModal${id}`).classList.add('flex');
+            }
 
-            blogImages.forEach(img => {
-                img.addEventListener('click', () => {
-                    popupBlogImage.src = img.src;
-                    blogPopup.classList.remove('hidden');
-                    blogPopup.classList.add('flex');
-                });
-            });
+            function closeBlogModal(id) {
+                document.getElementById(`blogModal${id}`).classList.remove('flex');
+                document.getElementById(`blogModal${id}`).classList.add('hidden');
+            }
 
-            closeBlogPopup.addEventListener('click', () => {
-                blogPopup.classList.remove('flex');
-                blogPopup.classList.add('hidden');
-            });
-
-            // Close when clicking outside the image
-            blogPopup.addEventListener('click', (e) => {
-                if (e.target === blogPopup) {
-                    blogPopup.classList.remove('flex');
-                    blogPopup.classList.add('hidden');
+            // Close modal when clicking outside
+            window.addEventListener('click', function (e) {
+                for (let i = 1; i <= 2; i++) {
+                    const modal = document.getElementById(`blogModal${i}`);
+                    if (e.target === modal) closeBlogModal(i);
                 }
             });
         </script>
 
+        <!-- Animation -->
+        <style>
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.95);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            .animate-fadeIn {
+                animation: fadeIn 0.3s ease-in-out;
+            }
+        </style>
 
         <!-- Contact Section -->
         <section id="contact" class="py-12 bg-slate-100 scroll-smooth" data-aos="fade-right">
@@ -597,7 +660,8 @@
                     </div>
 
                     <p class="mt-2 text-sm md:text-base text-center text-yellow-400">
-                        We would love to hear from you. Reach out with any questions about admissions, events, or how to
+                        We would love to hear from you. Reach out with any questions about admissions, events, or
+                        how to
                         become part
                         of the Word Of Faith Christian School family.
                     </p>
