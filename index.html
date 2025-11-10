@@ -9,6 +9,23 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        foundationMaroon: '#4B1E23',
+                        foundationYellow: '#facc15',
+                        foundationGreen: '#16a34a',     /* green-600 */
+                        foundationGreenDark: '#15803d', /* green-700 */
+                        foundationWhite: '#ffffff',
+                    },
+                },
+            },
+        }
+    </script>
+
+
     <!-- Font Awesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -48,23 +65,23 @@
 
 </head>
 
-<body class="bg-slate-100 font-sans" style="font-family: 'Inter', sans-serif;">
+<body class="bg-slate-100">
 
 
     <!-- Preloader Overlay -->
-    <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
-        <img src="images/same.jpeg" alt="School Logo" class="w-32 h-32 object-contain animate-slidefade" />
+    <div id="preloader" class="fixed inset-0 bg-slate-100 flex items-center justify-center z-50">
+        <img src="images/same-logo.jpg" alt="foundation logo" class="w-32 h-32 object-contain animate-slidefade" />
     </div>
 
     <!-- Header & Navigation -->
     <header class="bg-slate-100 shadow sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+        <div class="max-w-[90rem] mx-auto px-4 flex justify-between items-center py-4">
 
             <!-- Logo -->
             <div class="flex items-center justify-start space-x-4">
-                <img src="images/same.jpeg" alt=" Logo" class="h-20 object-contain">
+                <img src="images/same-logo.jpg" alt="Foundation Logo" class="h-20 object-contain">
                 <h1
-                    class="text-lg sm:text-xl md:text-3xl lg:text-3xl xl:text-4xl font-extrabold bg-gradient-to-r from-[#4B1E23] via-green-700 to-yellow-400 bg-clip-text text-transparent text-center">
+                    class="text-lg sm:text-xl md:text-3xl lg:text-3xl xl:text-4xl font-extrabold bg-gradient-to-r from-foundationMaroon via-foundationGreen to-foundationYellow bg-clip-text text-transparent text-center font-serif leading-tight tracking-tight">
                     S.A.M.E Foundation
                 </h1>
 
@@ -73,84 +90,101 @@
             <!-- Desktop Navigation -->
             <!-- Home -->
             <nav class="hidden lg:flex space-x-6 text-base font-semibold">
-                <a href="index.html" class="relative group text-[#4B1E23] hover:text-green-700">
+                <a href="index.html" class="relative group text-foundationMaroon hover:text-foundationGreenDark">
                     Home
                     <span
                         class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
                     </span>
                 </a>
 
                 <!-- About -->
                 <div class="relative group">
-                    <a href="#about" class="text-[#4B1E23] hover:text-green-700 inline-flex items-center">
+                    <a href="#about"
+                        class="text-foundationMaroon hover:text-foundationGreenDark inline-flex items-center">
                         About
-                        <svg class="ml-1 w-3 h-3 text-gray-600 group-hover:text-green-600 transition-transform duration-500 transform group-hover:rotate-180"
+                        <svg class="ml-1 w-3 h-3 text-foundationMaroon group-hover:text-foundationGreenDark transition-transform duration-500 transform group-hover:rotate-180"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </a>
                     <div
-                        class="absolute left-0 mt-2 w-40 bg-green-700 text-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-out z-10">
-                        <a href="missions.html" class="block px-4 py-2 hover:bg-green-100 hover:text-green-700">Mission
+                        class="absolute left-0 mt-2 w-40 bg-foundationGreenDark text-foundationWhite shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-out z-10">
+                        <a href="missions.html"
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">Mission
                             & Vision</a>
                         <a href="leadership.html"
-                            class="block px-4 py-2 hover:bg-green-100 hover:text-green-700">Leadership</a>
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">Leadership</a>
                     </div>
                 </div>
 
                 <!-- Programs -->
-                <a href="programs.html"
-                    class="relative group text-[#4B1E23] hover:text-green-700 inline-flex items-center">
-                    Programs
-                    <span
-                        class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                    </span>
-                </a>
+                <div class="relative group">
+                    <a href="#programs"
+                        class="text-foundationMaroon hover:text-foundationGreenDark inline-flex items-center">
+                        Programs
+                        <svg class="ml-1 w-3 h-3 text-foundationMaroon group-hover:text-foundationGreenDark transition-transform duration-500 transform group-hover:rotate-180"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-40 bg-foundationGreenDark text-foundationWhite shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-out z-10">
+                        <a href="programs1es.html"
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">Education &
+                            Scholarships</a>
+                        <a href="program2yecd.html"
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">YECD</a>
+                        <a href="program3hw.html"
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">Health &
+                            Wellness</a>
+                    </div>
+                </div>
 
                 <!-- Gallery -->
                 <a href="gallery.html"
-                    class="relative group text-[#4B1E23] hover:text-green-700 inline-flex items-center">
+                    class="relative group text-foundationMaroon hover:text-foundationGreenDark inline-flex items-center">
                     Gallery
                     <span
                         class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
                     </span>
                 </a>
 
                 <!-- Contact -->
-                <a href="#contact" class="relative group text-[#4B1E23] hover:text-green-700">
+                <a href="index.html#contact"
+                    class="relative group text-foundationMaroon hover:text-foundationGreenDark">
                     Contact
                     <span
                         class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
                     </span>
                 </a>
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="lg:hidden text-3xl focus:outline-none">
+            <button id="menu-btn" class="lg:hidden text-3xl sm:text-4xl md:text-5xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
+
         </div>
 
         <!-- Mobile/Tablet Menu -->
         <!-- Home -->
-        <div id="mobile-menu" class="lg:hidden hidden bg-gray-50 border-t px-4 py-4 space-y-2 font-semibold">
-            <a href="index.html" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">Home</a>
+        <div id="mobile-menu" class="lg:hidden hidden bg-foundationMaroon-50 border-t px-4 py-4 space-y-2 font-bold text-lg sm:text-xl md:text-2xl 
+         sm:space-y-3 md:space-y-4 sm:py-6 md:py-8">
+            <a href="index.html" class="block py-2 px-2 rounded text-foundationMaroon hover:bg-green-100">Home</a>
 
             <!-- About -->
             <div>
-                <button class="w-full flex justify-between items-center px-2 py-2 text-[#4B1E23] hover:text-green-600"
+                <button
+                    class="w-full flex justify-between items-center px-2 py-2 text-foundationMaroon hover:text-foundationGreenDark"
                     onclick="toggleDropdown('about-dropdown')">
                     About
                     <svg class="w-4 h-4 transition-transform" id="about-dropdown-icon" fill="none" stroke="currentColor"
@@ -159,134 +193,155 @@
                     </svg>
                 </button>
                 <div id="about-dropdown" class="hidden pl-4 mt-1 space-y-1">
-                    <a href="missions.html" class="block px-2 py-1 text-[#4B1E23] hover:bg-green-100 rounded">Mission &
+                    <a href="missions.html"
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">Mission &
                         Vision</a>
                     <a href="leadership.html"
-                        class="block px-2 py-1 text-[#4B1E23] hover:bg-green-100 rounded">Leadership</a>
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">Leadership</a>
                 </div>
             </div>
 
             <!-- programs -->
-            <a href="programs.html" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">
-                Programs
-            </a>
+            <div>
+                <button
+                    class="w-full flex justify-between items-center px-2 py-2 text-foundationMaroon hover:text-foundationGreenDark"
+                    onclick="toggleDropdown('programs-dropdown')">
+                    Programs
+                    <svg class="w-4 h-4 transition-transform" id="about-dropdown-icon" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="programs-dropdown" class="hidden pl-4 mt-1 space-y-1">
+                    <a href="programs1es.html"
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">Education &
+                        Scholarships</a>
+                    <a href="program2yecd.html"
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">YECD</a>
+                    <a href="program3hw.html"
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">Health & Wellness</a>
+                </div>
+            </div>
 
             <!-- Gallery -->
-            <a href="gallery.html" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">
+            <a href="gallery.html" class="block py-2 px-2 rounded text-foundationMaroon hover:bg-green-100">
                 Gallery
             </a>
 
             <!-- Contact -->
-            <a href="#contact" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">Contact</a>
+            <a href="index.html#contact"
+                class="block py-2 px-2 rounded text-foundationMaroon hover:bg-green-100">Contact</a>
         </div>
     </header>
 
     <!-- Merged: Mobile menu, Preloader hide, AOS loader + init -->
     <script>
-        (function () {
-            // Mobile menu
-            const menuBtn = document.getElementById("menu-btn");
-            const mobileMenu = document.getElementById("mobile-menu");
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-            }
-
-            // Dropdown mobile menu
-            window.toggleDropdown = function (id) {
-                const dropdown = document.getElementById(id);
-                const icon = document.getElementById(id + '-icon');
-                if (dropdown) dropdown.classList.toggle("hidden");
-                if (icon) icon.classList.toggle("rotate-180");
-            };
-
-            // Helper: ensure AOS library is present, load dynamically if needed
-            function ensureAOS(callback) {
-                if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
-                    return callback();
+            (function () {
+                // Mobile menu
+                const menuBtn = document.getElementById("menu-btn");
+                const mobileMenu = document.getElementById("mobile-menu");
+                if (menuBtn && mobileMenu) {
+                    menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
                 }
-                // load AOS dynamically and call callback on load
-                const s = document.createElement('script');
-                s.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
-                s.async = true;
-                s.onload = () => callback();
-                s.onerror = () => {
-                    console.warn('AOS failed to load from CDN. Check network / CSP.');
-                    // still call callback to avoid blocking site
-                    callback();
+
+                // Dropdown mobile menu
+                window.toggleDropdown = function (id) {
+                    const dropdown = document.getElementById(id);
+                    const icon = document.getElementById(id + '-icon');
+                    if (dropdown) dropdown.classList.toggle("hidden");
+                    if (icon) icon.classList.toggle("rotate-180");
                 };
-                document.head.appendChild(s);
-            }
 
-            function initAOS() {
-                try {
+                // Helper: ensure AOS library is present, load dynamically if needed
+                function ensureAOS(callback) {
                     if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
-                        AOS.init({ duration: 1000, once: true, offset: 100 });
-                        // ensure AOS recalculates positions after load and after layout shifts
-                        setTimeout(() => AOS.refresh(), 50);
-                    } else {
-                        // nothing to init (AOS didn't load), silently continue
+                        return callback();
                     }
-                } catch (e) {
-                    console.error('AOS init error:', e);
-                }
-            }
-
-            // -- Preloader hide logic -- waits for full load, waits animation length, then hides overlay &
-            // initializes AOS (so animations run after preloader removed)
-            function hidePreloaderAndInitAOS() {
-                const pre = document.getElementById('preloader');
-                // duration must match your animation (2.5s) - tweak if you changed that
-                const animationWait = 2500;
-                if (!pre) {
-                    // still ensure AOS is available and init
-                    ensureAOS(initAOS);
-                    return;
+                    // load AOS dynamically and call callback on load
+                    const s = document.createElement('script');
+                    s.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+                    s.async = true;
+                    s.onload = () => callback();
+                    s.onerror = () => {
+                        console.warn('AOS failed to load from CDN. Check network / CSP.');
+                        // still call callback to avoid blocking site
+                        callback();
+                    };
+                    document.head.appendChild(s);
                 }
 
-                // Wait the animation duration, then fade preloader out and init AOS
-                setTimeout(() => {
-                    pre.style.opacity = '0';
-                    pre.style.transition = 'opacity 0.6s ease';
-                    setTimeout(() => {
-                        pre.style.display = 'none';
+                function initAOS() {
+                    try {
+                        if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
+                            AOS.init({ duration: 1000, once: true, offset: 100 });
+                            // ensure AOS recalculates positions after load and after layout shifts
+                            setTimeout(() => AOS.refresh(), 50);
+                        } else {
+                            // nothing to init (AOS didn't load), silently continue
+                        }
+                    } catch (e) {
+                        console.error('AOS init error:', e);
+                    }
+                }
+
+                // -- Preloader hide logic -- waits for full load, waits animation length, then hides overlay &
+                // initializes AOS (so animations run after preloader removed)
+                function hidePreloaderAndInitAOS() {
+                    const pre = document.getElementById('preloader');
+                    // duration must match your animation (2.5s) - tweak if you changed that
+                    const animationWait = 2500;
+                    if (!pre) {
+                        // still ensure AOS is available and init
                         ensureAOS(initAOS);
-                    }, 600);
-                }, animationWait);
-            }
+                        return;
+                    }
 
-            if (document.readyState === 'complete') {
-                hidePreloaderAndInitAOS();
-            } else {
-                window.addEventListener('load', hidePreloaderAndInitAOS);
-            }
+                    // Wait the animation duration, then fade preloader out and init AOS
+                    setTimeout(() => {
+                        pre.style.opacity = '0';
+                        pre.style.transition = 'opacity 0.6s ease';
+                        setTimeout(() => {
+                            pre.style.display = 'none';
+                            ensureAOS(initAOS);
+                        }, 600);
+                    }, animationWait);
+                }
 
-        })();
+                if (document.readyState === 'complete') {
+                    hidePreloaderAndInitAOS();
+                } else {
+                    window.addEventListener('load', hidePreloaderAndInitAOS);
+                }
+
+            })();
     </script>
 
     <!-- HERO -->
-    <section class="hero-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-60" data-aos="fade-up">
+    <section class="hero-bg text-foundationWhite">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 py-60" data-aos="fade-up">
             <div class="max-w-3xl">
                 <h1
-                    class="text-4xl md:text-5xl font-extrabold leading-tight bg-slate-100 via-green-700 to-yellow-500 bg-clip-text text-transparent inline-block">
+                    class="text-4xl md:text-5xl font-extrabold leading-relaxed font-sans text-foundationGreen bg-clip-text text-transparent inline-block">
                     S.A.M.E Foundation
                 </h1>
 
-                <p class="mt-4 text-lg md:text-xl text-yellow-400">
-                    We partner with local communities to create
-                    sustainable programs in education, health and livelihoods — because when communities thrive, nations
-                    progress.
+                <p class="mt-4 text-lg md:text-xl text-foundationWhite leading-relaxed font-serif">
+                    At the <strong>Shakers and Movers Educational (S.A.M.E) Foundation</strong>, we champion health,
+                    education, and community empowerment.
+                    Together, let’s create lasting change — one life at a time.
                 </p>
+
 
                 <!-- NEW BLOG BUTTON -->
                 <div class="mt-6">
-                    <a href="blog.html" class="inline-block bg-yellow-400 text-[#4B1E23] text-sm md:text-base font-semibold px-6 py-3 rounded-lg shadow-md
-                    transition-all duration-300 animate-zoom hover:bg-green-700 hover:text-white hover:scale-105">
+                    <a href="blog.html"
+                        class="inline-block bg-foundationYellow text-foundationMaroon text-sm md:text-base font-semibold px-6 py-3 rounded-lg shadow-md
+                    transition-all duration-300 animate-zoom hover:bg-foundationGreenDark hover:text-foundationWhite hover:scale-105">
                         Visit Our Blog
                     </a>
                 </div>
 
-                <div class="mt-6 text-sm text-yellow-400">
+                <div class="mt-6 text-sm text-foundationWhite">
                     Trusted by partners across regions • Transparent reporting • Community-led
                 </div>
             </div>
@@ -300,7 +355,7 @@
             background-image: linear-gradient(180deg,
                     rgba(0, 0, 0, 0.35),
                     rgba(0, 0, 0, 0.25)),
-                url('images/foundation.jpeg');
+                url('images/image0003.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -326,85 +381,88 @@
 
 
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 -mt-10 scroll-smooth">
+    <main class="max-w-[90rem] mx-auto px-4 sm:px-6 -mt-10 scroll-smooth">
 
         <!-- Welcome Page -->
-        <section id="about" class="bg-[#4B1E23] rounded-lg shadow px-6 py-10">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+        <section id="about" class="bg-foundationMaroon rounded-lg shadow px-6 py-10">
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
                 <!-- Text Content -->
                 <div data-aos="fade-right">
-                    <h2 class="text-2xl md:text-3xl text-green-700 font-extrabold text-center mb-4">
-                        Welcome to S.A.M.E Foundation
+                    <h2
+                        class="text-2xl md:text-3xl text-foundationGreen font-extrabold text-center mb-4 leading-relaxed font-sans">
+                        Welcome to the S.A.M.E Foundation
                     </h2>
 
                     <!-- Decorative Line with Star Icon -->
-                    <div class="flex items-center justify-center mb-6 w-full max-w-sm mx-auto">
-                        <div class="flex-grow border-t border-green-700"></div>
-                        <div class="mx-3 text-green-700 text-xl md:text-2xl">
+                    <div class="flex items-center justify-center mb-6 w-auto mx-auto">
+                        <div class="flex-grow border-t border-foundationGreen max-w-[40%]"></div>
+                        <div class="mx-3 text-foundationGreen text-xl md:text-2xl">
                             <i class="fas fa-hands-helping" aria-hidden="true"></i>
                         </div>
-                        <div class="flex-grow border-t border-green-700"></div>
+                        <div class="flex-grow border-t border-foundationGreen max-w-[40%]"></div>
                     </div>
 
 
-                    <p class="mt-4 text-yellow-400">
-                        SAME Foundation is dedicated to building resilient communities by investing in people — with a
-                        focus
-                        on inclusive education, women's empowerment, and sustainable livelihoods. We design
-                        community-led
-                        programs that are measurable, scalable, and respectful of local context.
+
+                    <p
+                        class="mt-4 mb-4 text-foundationWhite first-letter:text-5xl first-letter:font-bold first-letter:text-foundationYellow first-letter:float-left first-letter:mr-2">
+                        At the SAME Foundation, we believe that education is the cornerstone of
+                        transformation and empowerment. Our mission is to create pathways of opportunity
+                        for under-resourced students, families, and communities through access to quality
+                        education, leadership development, and global exposure.
                     </p>
 
-                    <ul class="mt-6 space-y-3">
-                        <li class="flex gap-3 items-start">
-                            <div
-                                class="mt-1 w-8 h-8 flex items-center justify-center bg-green-50 text-green-700 rounded">
-                                ✓
-                            </div>
-                            <div>
-                                <div class="font-medium text-green-700 font-semibold">Community-first approach</div>
-                                <div class="text-sm text-yellow-400">Programs designed with beneficiaries, not for them.
-                                </div>
-                            </div>
-                        </li>
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Since our founding, we have worked tirelessly to bridge the gap between potential
+                        and opportunity—empowering young minds to rise above barriers and become
+                        catalysts for positive change in their communities and beyond. Through strategic
+                        partnerships in Africa, the Caribbean, and the United States, SAME Foundation has
+                        provided scholarships, training, and community development initiatives that continue
+                        to impact lives across generations.
+                    </p>
 
-                        <li class="flex gap-3 items-start">
-                            <div
-                                class="mt-1 w-8 h-8 flex items-center justify-center bg-green-50 text-green-700 rounded">
-                                ✓
-                            </div>
-                            <div>
-                                <div class="font-medium text-green-700 font-semibold">Transparent reporting</div>
-                                <div class="text-sm text-yellow-400">Clear, frequent updates and audited reports.</div>
-                            </div>
-                        </li>
-                    </ul>
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+
+                        We invite you to explore our programs, celebrate our success stories, and join us in
+                        shaping a world where education and equity move hand in hand. Together, we are
+                        shakers and movers—creating change that lasts.
+                    </p>
+
+                    <p
+                        class="text-lg text-foundationYellow font-bold leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+
+                        Welcome to the movement. Welcome to SAME Foundation.</p>
+
 
                     <a href="missions.html"
-                        class="inline-flex items-center px-4 py-2 text-white bg-green-700 rounded-md font-semibold transition-all duration-300 hover:bg-white hover:text-green-700 mt-6">
+                        class="inline-flex items-center px-4 py-2 text-foundationWhite bg-foundationGreen rounded-md font-semibold transition-all duration-300 hover:bg-foundationYellow hover:text-foundationMaroon mt-6">
                         More About Us
                     </a>
                 </div>
 
-                <!-- Image -->
-                <div data-aos="fade-left">
+                <div data-aos="fade-left" class="flex justify-center lg:justify-end lg:items-start">
                     <img src="images/same.jpeg" alt="Community"
-                        class="rounded-lg shadow object-cover w-full h-64 md:h-80" />
+                        class="rounded-lg shadow object-cover w-full max-w-md lg:max-w-xl h-auto" />
                 </div>
+
+
             </div>
         </section>
 
 
-        <!-- PROGRAMS -->
+        <!-- Initiatives -->
         <section id="programs" class="mt-8 scroll-smooth" data-aos="fade-down">
             <div class="flex items-center justify-between">
-                <h2 class="text-2xl text-green-700 font-bold">Our Programs</h2>
+                <h2 class="text-3xl text-foundationGreen font-bold font-sans leading-tight tracking-tight">Our
+                    Initiatives</h2>
             </div>
 
             <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <article
-                    class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                    class="bg-foundationWhite p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
 
                     <!-- Image -->
                     <div class="mb-6 overflow-hidden rounded-2xl">
@@ -413,16 +471,17 @@
                     </div>
 
                     <!-- Content -->
-                    <h3 class="text-xl text-green-700 font-semibold mb-4">Education & Scholarships</h3>
-                    <p class="text-[#4B1E23] mb-6 text-sm sm:text-base md:text-lg">
-                        Supporting in-school and out-of-school children with educational materials, mentorship, and
-                        scholarships.
+                    <h3 class="text-xl text-foundationGreen font-semibold mb-4 font-sans leading-tight tracking-tight">
+                        Education & Scholarships</h3>
+                    <p
+                        class="text-gray-900 mb-6 text-sm sm:text-base md:text-lg font-serif leading-tight tracking-tight">
+                        Our Scholarship Programme is dedicated to unlocking potential and empowering young minds with
+                        the opportunity to dream bigger. We believe that financial barriers should never stand in the
+                        way of talent, ambition, and a strong desire to make a difference.
                     </p>
 
-                    <div class="mb-4 text-sm text-black">Impact: 300+ children supported</div>
-
-                    <a href="programs.html#education"
-                        class="inline-flex items-center text-green-700 font-semibold hover:underline group">
+                    <a href="programs1es.html"
+                        class="inline-flex items-center text-foundationGreen font-semibold hover:underline group font-sans leading-tight tracking-tight">
                         Find more
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" fill="none"
@@ -434,24 +493,26 @@
 
 
                 <article
-                    class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                    class="bg-foundationWhite p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
 
                     <!-- Image -->
                     <div class="mb-6 overflow-hidden rounded-2xl">
-                        <img src="images/foundation.jpeg" alt="Men's Livelihood"
+                        <img src="images/foundation.jpeg" alt="Youth Empowerment & Community Development"
                             class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
                     <!-- Content -->
-                    <h3 class="text-xl text-green-700 font-semibold mb-4">Men's Livelihood</h3>
-                    <p class="text-[#4B1E23] mb-6 text-sm sm:text-base md:text-lg">
-                        Skills training, micro-grants, and market access for men entrepreneurs.
+                    <h3 class="text-xl text-foundationGreen font-semibold mb-4 font-sans leading-tight tracking-tight">
+                        Youth Empowerment & Community Development</h3>
+                    <p
+                        class="text-gray-900 mb-6 text-sm sm:text-base md:text-lg font-serif leading-tight tracking-tight">
+                        Our Youth Empowerment & Community Development Programme is built on the belief that young people
+                        are the driving force of sustainable change. We equip them with the skills, confidence, and
+                        opportunities they need to shape their future and uplift their communities.
                     </p>
 
-                    <div class="mb-4 text-sm text-black">Impact: 120 men trained</div>
-
-                    <a href="programs.html#health"
-                        class="inline-flex items-center text-green-700 font-semibold hover:underline group">
+                    <a href="program2yecd.html"
+                        class="inline-flex items-center text-foundationGreen font-semibold hover:underline group font-sans leading-tight tracking-tight">
                         Find more
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" fill="none"
@@ -463,24 +524,28 @@
 
 
                 <article
-                    class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                    class="bg-foundationWhite p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
 
                     <!-- Image -->
                     <div class="mb-6 overflow-hidden rounded-2xl">
-                        <img src="images/foundation.jpeg" alt="Health & Sanitation"
+                        <img src="images/foundation.jpeg" alt="Health & Wellnes"
                             class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
                     <!-- Content -->
-                    <h3 class="text-xl text-green-700 font-semibold mb-4">Health & Sanitation</h3>
-                    <p class="text-[#4B1E23] mb-6 text-sm sm:text-base md:text-lg">
-                        Community health education, sanitation facilities, and preventive health campaigns.
+                    <h3 class="text-xl text-foundationGreen font-semibold mb-4 font-sans leading-tight tracking-tight">
+                        Health & Wellness</h3>
+                    <p
+                        class="text-gray-900 mb-6 text-sm sm:text-base md:text-lg font-serif leading-tight tracking-tight">
+                        At <strong>SAME</strong> foundation, we believe that a healthy community is a thriving
+                        community. Our Health &
+                        Wellness programmes are designed to promote physical, mental, and emotional well-being for
+                        individuals of all ages. Through awareness campaigns, workshops, health screenings, and access
+                        to essential resources, we empower people to make informed choices about their health.
                     </p>
 
-                    <div class="mb-4 text-sm text-black">Impact: 5 communities reached</div>
-
-                    <a href="programs.html#livelihoods"
-                        class="inline-flex items-center text-green-700 font-semibold hover:underline group">
+                    <a href="program3hw.html"
+                        class="inline-flex items-center text-foundationGreen font-semibold hover:underline group font-sans leading-tight tracking-tight">
                         Find more
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" fill="none"
@@ -493,11 +558,13 @@
 
 
         <!-- BLOG PREVIEW -->
-        <section id="blog" class="mt-8 bg-[#4B1E23] rounded-lg shadow px-6 py-8 scroll-smooth">
+        <section id="blog" class="mt-8 bg-foundationMaroon rounded-lg shadow px-6 py-8 scroll-smooth">
             <div class="flex items-center justify-between">
-                <h2 class="text-2xl text-green-700 font-bold" data-aos="fade-down">From Our Journal</h2>
-                <a href="blog.html" class="inline-block bg-yellow-400 text-[#4B1E23] text-sm font-semibold px-3 py-2 rounded-lg shadow-md 
-           transition-all duration-300 animate-zoom hover:bg-green-700 hover:text-white hover:scale-105">
+                <h2 class="text-3xl text-foundationGreen font-bold"
+                    data-aos="fade-down font-sans leading-tight tracking-tight">From Our Journal</h2>
+                <a href="blog.html"
+                    class="inline-block bg-foundationYellow text-foundationMaroon text-sm font-semibold px-3 py-2 rounded-lg shadow-md 
+           transition-all duration-300 animate-zoom hover:bg-foundationGreen hover:text-foundationWhite hover:scale-105">
                     Visit Our Blog
                 </a>
 
@@ -526,11 +593,13 @@
                 <article class="p-4 border rounded-lg bg-slate-100">
                     <img src="images/foundation.jpeg" alt="Blog Image"
                         class="rounded-lg object-cover w-full h-64 mb-4" />
-                    <h4 class="font-semibold text-green-700">How Local Leadership Transforms Schools</h4>
-                    <p class="mt-2 text-lg text-[#4B1E23]">A short piece about how community-driven approaches improved
-                        attendance and learning outcomes.</p>
+                    <h4 class="text-2xl font-semibold text-foundationGreen font-sans leading-tight tracking-tight">
+                        Ghana-Turkey Educational Initiative</h4>
+                    <p class="mt-2 text-lg text-gray-900 font-serif leading-tight tracking-tight">The Ghana–Turkey
+                        SAME Foundation 2025 Educational Impact Report In Collaboration with RixonOC Management
+                        Consulting and Communications, LLC (USA)</p>
                     <button onclick="openBlogModal(1)"
-                        class="mt-4 bg-green-700 hover:bg-yellow-400 text-white text-sm px-4 py-2 rounded transition">
+                        class="mt-4 bg-foundationGreen hover:bg-foundationYellow text-foundationWhite hover:text-foundationMaroon text-sm px-4 py-2 rounded transition">
                         Read More
                     </button>
                 </article>
@@ -539,11 +608,13 @@
                 <article class="p-4 border rounded-lg bg-slate-100">
                     <img src="images/foundation.jpeg" alt="Blog Image"
                         class="rounded-lg object-cover w-full h-64 mb-4" />
-                    <h4 class="font-semibold text-green-700">Small Grants, Big Impact</h4>
-                    <p class="mt-2 text-lg text-[#4B1E23]">Stories of women entrepreneurs who scaled their businesses
+                    <h4 class="text-2xl font-semibold text-foundationGreen font-sans leading-tight tracking-tight">Small
+                        Grants, Big Impact</h4>
+                    <p class="mt-2 text-lg text-gray-900 font-serif leading-tight tracking-tight">Stories of women
+                        entrepreneurs who scaled their businesses
                         with our micro-grants.</p>
                     <button onclick="openBlogModal(2)"
-                        class="mt-4 bg-green-700 hover:bg-yellow-400 text-white text-sm px-4 py-2 rounded transition">
+                        class="mt-4 bg-foundationGreen hover:bg-foundationYellow text-foundationWhite hover:text-foundationMaroon text-sm px-4 py-2 rounded transition">
                         Read More
                     </button>
                 </article>
@@ -554,41 +625,205 @@
         <div id="blogModals">
             <!-- Modal 1 -->
             <div id="blogModal1" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-                <div class="bg-white rounded-2xl max-w-3xl w-full mx-4 overflow-hidden shadow-lg animate-fadeIn">
+                <div
+                    class="bg-foundationWhite rounded-2xl max-w-6xl w-full mx-4 overflow-hidden shadow-lg animate-fadeIn">
+
                     <img src="images/foundation.jpeg" alt="Full Blog Image" class="w-full h-64 object-cover">
+
                     <div class="p-6 pt-0 max-h-[70vh] overflow-y-auto relative">
-                        <div class="flex justify-between items-start sticky top-0 bg-white/90 backdrop-blur-sm z-10">
-                            <h2 class="text-2xl font-bold text-green-700">How Local Leadership Transforms Schools
+
+                        <!-- Sticky Header -->
+                        <div
+                            class="flex justify-between items-start sticky top-0 bg-white/90 backdrop-blur-sm z-10 p-4">
+                            <h2
+                                class="text-2xl sm:text-3xl font-bold text-foundationGreenDark font-sans leading-tight tracking-tight">
+                                Ghana-Turkey Educational Initiative
                             </h2>
                             <button onclick="closeBlogModal(1)"
-                                class="text-gray-400 hover:text-red-600 text-2xl leading-none">&times;</button>
+                                class="text-gray-600 hover:text-red-600 text-3xl leading-none">&times;</button>
                         </div>
-                        <p class="text-lg text-gray-600 leading-relaxed">
-                            Local leadership plays a vital role in transforming schools and shaping the future of
-                            education.
-                            When communities take ownership of their educational systems, the results are often more
-                            impactful
-                            and sustainable than those imposed externally. Principals, teachers, parents, and
-                            community leaders
-                            who understand the unique challenges can create practical, relevant solutions to improve
-                            attendance,
-                            learning outcomes, and community engagement.
-                        </p>
+
+                        <div
+                            class="text-gray-900 text-base sm:text-lg font-serif leading-snug mt-4">
+
+                            <p class="mb-4 text-center font-bold text-lg sm:text-xl md:text-xl lg:text-1xl"
+                                data-aos="fade-up">
+                                SAME Foundation 2025 Educational Impact Report<br>
+                                In Collaboration with RixonOC Management Consulting and Communications, LLC (USA)
+                            </p>
+
+                            <p class="font-semibold mb-4" data-aos="fade-up">
+                                Date: 1st October 2025<br>
+                                Prepared by: Senior Educational Consultant, Shakers and Movers Educational (SAME)
+                                Foundation
+                            </p>
+
+                            <p class="mb-4" data-aos="fade-up">
+                                <strong>Introduction:</strong>
+                                <br>
+                                The Shakers and Movers Educational (SAME) Foundation, in partnership with
+                                RixonOC Management Consulting and Communications, LLC in the United States,
+                                has made remarkable strides in advancing educational access and opportunity for
+                                Ghanaian students in 2025. This collaboration, rooted in a shared vision of academic
+                                empowerment and global exposure, continues to transform lives through
+                                education—one student, one community at a time.
+                            </p>
+
+                            <p class="mb-4" data-aos="fade-up">
+                                <strong>Program Overview:</strong>
+                                <br>
+                                In the first half of 2025, the SAME Foundation successfully advised and supported
+                                three Ghanaian master’s students, and one undergraduate helping them secure
+                                scholarships totaling USD 35,000 (approximately GHC 455,000) to pursue graduate
+                                studies in Turkey. This initiative represents more than just financial assistance; it
+                                embodies the Foundation’s mission to bridge educational gaps and foster global
+                                competence among Africa’s emerging leaders.
+                            </p>
+
+                            <p class="mb-4" data-aos="fade-up">
+                                Through the technical and strategic guidance of RixonOC Management Consulting
+                                and Communications, LLC, the program offered comprehensive educational
+                                advising—ranging from academic placement and scholarship acquisition to
+                                intercultural readiness and leadership coaching.
+                            </p>
+
+                            <p class="font-semibold mt-4" data-aos="fade-up">
+                                Program Objectives:
+                            </p>
+                            <ul class="list-disc ml-6 mt-2 space-y-2" data-aos="fade-up">
+                                <li>To promote access to higher education for deserving Ghanaian students
+                                    through international partnerships.
+                                </li>
+                                <li>
+                                    To develop globally minded scholars capable of contributing to sustainable
+                                    development in Ghana and across Africa.
+                                </li>
+                                <li>
+                                    To create a generational ripple effect by empowering students who will, in
+                                    turn, inspire others within their communities.
+                                </li>
+                            </ul>
+
+                            <p class="mt-4 font-semibold" data-aos="fade-up">
+                                Key Achievements:
+                            </p>
+                            <ul class="list-disc ml-6 mt-2 space-y-2" data-aos="fade-up">
+                                <li>4 master’s students successfully enrolled in reputable Turkish universities for
+                                    postgraduate studies in diverse fields, including economics, education, public
+                                    administration, and communication.
+                                </li>
+                                <li>
+                                    USD 35,000 (GHC 455,000) in scholarship awards secured within six months,
+                                    easing the financial burden on students and their families.
+                                </li>
+                                <li>
+                                    Establishment of an academic advising model that connects Ghanaian
+                                    students with international opportunities through credible partnerships.
+                                </li>
+                                <li>
+                                    Strengthened collaboration between SAME Foundation and RixonOC
+                                    Management Consulting and Communications, LLC, laying the groundwork
+                                    for a long-term international education pipeline.
+                                </li>
+                            </ul>
+                            <p class="mt-4" data-aos="fade-up">
+                                <strong>Impact on Ghanaian Communities:</strong>
+                                The long-term impact of this educational initiative extends beyond the four recipients.
+                                By enabling access to quality undergraduate and graduate education abroad, the
+                                SAME Foundation is nurturing a new generation of Ghanaian leaders equipped with
+                                the global knowledge, critical thinking, and professional skills necessary to drive
+                                innovation and sustainable change upon their return.
+                            </p>
+
+                            <p class="mt-4" data-aos="fade-up">
+                                <strong>Community Empowerment:</strong>
+                                These scholars serve as role models and catalysts for
+                                other young Ghanaians, demonstrating that international education is attainable
+                                through hard work, mentorship, and strategic support.
+                            </p>
+
+                            <p class="mt-4" data-aos="fade-up">
+                                <strong>Knowledge Transfer:</strong>
+                                Graduates are expected to contribute to local development
+                                through research, leadership, and community-based projects upon completion of
+                                their programs.
+                            </p>
+
+                            <p class="mt-4" data-aos="fade-up">
+                                <strong>Generational Transformation:</strong>
+                                As these students progress in their careers, they will
+                                uplift families and communities, fostering a cycle of educational advancement and
+                                socio-economic mobility.
+                            </p>
+
+                            <p class="font-semibold mt-4" data-aos="fade-up">
+                                Conclusion
+                            </p>
+
+                            <p class="mt-2" data-aos="fade-up">
+                                The SAME Foundation’s collaboration with RixonOC Management Consulting and
+                                Communications, LLC has proven that strategic partnerships can create measurable
+                                educational impact. The success of the 2025 cohort underscores the transformative
+                                power of mentorship, access, and opportunity.
+                                <br><br>
+                                As the Foundation continues to expand its reach, the vision remains clear: to
+                                empower young minds, shape global citizens, and build a legacy of learning that
+                                transcends generations.
+                            </p>
+
+                            <p class="font-semibold mt-4" data-aos="fade-up">
+                                Next Steps:
+                            </p>
+
+                            <ul class="list-disc ml-6 mt-2 space-y-2" data-aos="fade-up">
+                                <li>Expand the scholarship advisory program to reach 20 new applicants in 2026
+                                    academic year.
+                                </li>
+                                <li>
+                                    USD 35,000 (GHC 455,000) in scholarship awards secured within six months,
+                                    easing the financial burden on students and their families.
+                                </li>
+                                <li>
+                                    Formalize academic partnerships with additional universities in Turkey.
+                                </li>
+                                <li>
+                                    Develop a “Scholars Return Program” to help graduates reintegrate and
+                                    contribute to national development projects.
+                                </li>
+                            </ul>
+                            <p class="mb-4" data-aos="fade-up">
+                                <strong>Prepared by:</strong>
+                                <br>
+                                Dr. Rixon O. Campbell
+                                <br>
+                                Senior Educational Consultant, SAME Foundation
+                                <br>
+                                President & CEO, RixonOC Management Consulting and Communications, LLC
+                                <br>
+                                ✉️ rixonocgroup@gmail.com
+                                <br>
+                                📞 +1 (917) 912-3059
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
+
             <!-- Modal 2 -->
             <div id="blogModal2" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-                <div class="bg-white rounded-2xl max-w-3xl w-full mx-4 overflow-hidden shadow-lg animate-fadeIn">
+                <div
+                    class="bg-foundationWhite rounded-2xl max-w-6xl w-full mx-4 overflow-hidden shadow-lg animate-fadeIn">
                     <img src="images/foundation.jpeg" alt="Full Blog Image" class="w-full h-64 object-cover">
                     <div class="p-6 pt-0 max-h-[70vh] overflow-y-auto relative">
                         <div class="flex justify-between items-start sticky top-0 bg-white/90 backdrop-blur-sm z-10">
-                            <h2 class="text-2xl font-bold text-green-700">Small Grants, Big Impact</h2>
+                            <h2
+                                class="text-2xl font-bold text-foundationGreenDark font-sans leading-tight tracking-tight">
+                                Small Grants, Big Impact</h2>
                             <button onclick="closeBlogModal(2)"
                                 class="text-gray-400 hover:text-red-600 text-2xl leading-none">&times;</button>
                         </div>
-                        <p class="text-lg text-gray-600 leading-relaxed">
+                        <p class="text-lg text-gray-900 font-serif leading-tight tracking-tight">
                             SAME Foundation’s micro-grants have empowered women entrepreneurs to scale their
                             businesses.
                             Through targeted financial support, training, and mentorship, these entrepreneurs have
@@ -643,33 +878,36 @@
         </style>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-12 scroll-smooth" data-aos="fade-right">
-            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section id="contact" class="py-12 scroll-smooth font-serif leading-tight tracking-tight" data-aos="fade-right">
+            <div class="max-w-[90rem] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <!-- Contact Info + Map Box -->
-                <div class="bg-[#4B1E23] text-white p-4 md:p-6 rounded-2xl shadow-lg">
-                    <h2 class="text-xl md:text-2xl font-bold mb-3 text-green-700 text-center">Get In Touch</h2>
+                <div class="bg-foundationMaroon text-foundationWhite p-4 md:p-6 rounded-2xl shadow-lg">
+                    <h2 class="text-xl md:text-2xl font-bold mb-3 text-foundationGreen text-center">Get In Touch
+                    </h2>
 
                     <!-- Decorative Line with Icon -->
                     <div class="flex items-center justify-center mb-4 w-full max-w-sm mx-auto">
-                        <div class="flex-grow border-t border-green-700"></div>
-                        <div class="mx-3 text-green-700 text-lg md:text-xl">
+                        <div class="flex-grow border-t border-foundationGreen"></div>
+                        <div class="mx-3 text-foundationGreen text-lg md:text-xl">
                             <i class="fas fa-hands-helping"></i>
                         </div>
-                        <div class="flex-grow border-t border-green-700"></div>
+                        <div class="flex-grow border-t border-foundationGreen"></div>
                     </div>
 
-                    <p class="mt-2 text-sm md:text-base text-center text-yellow-400">
-                        We would love to hear from you. Reach out with any questions about admissions, events, or
-                        how to
-                        become part
-                        of the Word Of Faith Christian School family.
+                    <p class="mt-2 text-sm md:text-base text-left text-foundationYellow leading-relaxed font-serif">
+                        We’d love to hear from you. Whether you have questions about our initiatives, upcoming
+                        events,
+                        or ways to get involved,
+                        the S.A.M.E Foundation welcomes your interest and support as we work together to build
+                        healthier, stronger communities.
                     </p>
 
-                    <ul class="mt-4 space-y-2 text-sm md:text-base text-yellow-400">
-                        <li><strong>📍 Address:</strong> USA</li>
+
+                    <ul class="mt-4 space-y-2 text-sm md:text-base text-foundationYellow">
+                        <li><strong>📍 Address:</strong> U.S.A - GHANA</li>
                         <li><strong>📞 Phone:</strong> 050 00000000 / 024 00000000</li>
-                        <li><strong>✉️ Email:</strong> samefoundation@gmail.com</li>
+                        <li><strong>✉️ Email:</strong> samefoundationusagh@gmail.com</li>
                     </ul>
 
                     <div class="mt-4 rounded overflow-hidden shadow-md">
@@ -683,16 +921,18 @@
                 </div>
 
                 <!-- Contact Form Box -->
-                <div class="bg-white p-4 md:p-6 rounded-2xl shadow-lg" data-aos="fade-left">
+                <div class="bg-foundationWhite p-4 md:p-6 rounded-2xl shadow-lg font-serif leading-tight tracking-tight"
+                    data-aos="fade-left">
                     <form id="contactForm" class="grid gap-4 md:gap-5">
-                        <h2 class="text-xl md:text-2xl font-bold text-center text-green-700">Send Us A Message</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-center text-foundationGreen">Send Us A Message
+                        </h2>
 
                         <!-- Name -->
                         <div>
                             <label for="name" class="block text-slate-700 font-semibold mb-1 text-sm md:text-base">Your
                                 Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your full name" required
-                                class="w-full p-2 md:p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-green-400 focus:outline-none text-sm md:text-base">
+                                class="w-full p-2 md:p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-foundationGreen focus:outline-none text-sm md:text-base">
                         </div>
 
                         <!-- Email -->
@@ -700,7 +940,7 @@
                             <label for="email"
                                 class="block text-slate-700 font-semibold mb-1 text-sm md:text-base">Email</label>
                             <input type="email" id="email" name="email" placeholder="Enter your email address" required
-                                class="w-full p-2 md:p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-green-400 focus:outline-none text-sm md:text-base">
+                                class="w-full p-2 md:p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-foundationGreen focus:outline-none text-sm md:text-base">
                         </div>
 
                         <!-- Message -->
@@ -709,13 +949,13 @@
                                 class="block text-slate-700 font-semibold mb-1 text-sm md:text-base">Message</label>
                             <textarea id="message" name="message" rows="4" placeholder="Write your message here..."
                                 required
-                                class="w-full p-2 md:p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-green-400 focus:outline-none text-sm md:text-base"></textarea>
+                                class="w-full p-2 md:p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-foundationGreen focus:outline-none text-sm md:text-base"></textarea>
                         </div>
 
                         <!-- Submit Button -->
                         <div class="flex justify-start">
                             <button type="submit"
-                                class="bg-green-700 text-white font-bold px-4 md:px-5 py-2 md:py-3 rounded-full hover:bg-green-700 transition transform hover:-translate-y-1 shadow-md text-sm md:text-base">
+                                class="bg-foundationGreen text-foundationWhite font-bold px-4 md:px-5 py-2 md:py-3 rounded-full hover:bg-foundationGreen transition transform hover:-translate-y-1 shadow-md text-sm md:text-base">
                                 Send Message
                             </button>
                         </div>
@@ -765,39 +1005,46 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-[#4B1E23] text-white py-12 mt-16 relative" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-6">
+    <footer id="contact" class="bg-foundationMaroon text-foundationWhite py-12 mt-16 relative" data-aos="fade-up">
+        <div class="max-w-[90rem] mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
 
                 <!-- Logo + Write-up -->
                 <div>
-                    <img src="images/same.jpeg" alt="School Logo" class="w-28 mx-auto md:mx-0 mb-4">
-                    <h3 class="text-lg font-semibold text-yellow-400">S.A.M.E Foundation</h3>
-                    <p class="text-green-700 mt-2 text-1xl">
-                        "Mott"
+                    <img src="images/same-logo.jpg" alt="Same-Logo" class="w-28 mx-auto md:mx-0 mb-4">
+                    <h3 class="text-lg font-semibold text-foundationYellow font-serif leading-tight tracking-tight">
+                        S.A.M.E Foundation</h3>
+                    <p class="text-foundationWhite mt-2 text-1xl font-serif leading-tight tracking-tight">
+                        "Creating change that lasts"
+                    </p>
+
                 </div>
 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-3 text-yellow-400">Quick Links</h3>
+                    <h3
+                        class="text-lg font-semibold mb-3 text-foundationYellow font-serif leading-tight tracking-tight">
+                        Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
-                        <li><a href="blog.html" class="hover:text-yellow-400">Blog</a></li>
-                        <li><a href="programs.html" class="hover:text-yellow-400">Programs</a></li>
-                        <li><a href="missions.html" class="hover:text-yellow-400">About Us</a></li>
+                        <li><a href="index.html" class="hover:text-foundationYellow">Home</a></li>
+                        <li><a href="blog.html" class="hover:text-foundationYellow">Blog</a></li>
+                        <li><a href="programs.html" class="hover:text-foundationYellow">Programs</a></li>
+                        <li><a href="missions.html" class="hover:text-foundationYellow">About Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div class="space-y-3">
                     <div>
-                        <h3 class="text-lg font-semibold mb-3 text-yellow-400">Contact Info</h3>
+                        <h3
+                            class="text-lg font-semibold mb-3 text-foundationYellow font-serif leading-tight tracking-tight">
+                            Contact Info</h3>
                     </div>
 
                     <!-- Phone 1 -->
                     <div class="text-sm">
                         <a href="tel:+233000000000"
-                            class="inline-flex items-center text-slate-100 hover:text-yellow-400 transition">
+                            class="inline-flex items-center text-slate-100 hover:text-foundationYellow transition">
                             <i class="fas fa-phone-alt mr-2 text-slate-100"></i> +233 (0) 000000000
                         </a>
                     </div>
@@ -805,7 +1052,7 @@
                     <!-- Phone 2 -->
                     <div class="text-sm">
                         <a href="tel:+233000000000"
-                            class="inline-flex items-center text-slate-100 hover:text-yellow-400 transition">
+                            class="inline-flex items-center text-slate-100 hover:text-foundationYellow transition">
                             <i class="fas fa-phone-alt mr-2 text-slate-100"></i> +233 (0) 000000000
                         </a>
                     </div>
@@ -821,18 +1068,20 @@
 
                 <!-- Social Media -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-3 text-yellow-400">Follow Us</h3>
+                    <h3
+                        class="text-lg font-semibold mb-3 text-foundationYellow font-serif leading-tight tracking-tight">
+                        Follow Us</h3>
                     <ul class="space-y-2">
                         <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">Facebook</a></li>
+                                class="hover:text-foundationYellow">Facebook</a></li>
                         <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">Instagram</a></li>
+                                class="hover:text-foundationYellow">Instagram</a></li>
                         <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">Twitter</a></li>
+                                class="hover:text-foundationYellow">Twitter</a></li>
                         <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">LinkedIn</a></li>
+                                class="hover:text-foundationYellow">LinkedIn</a></li>
                         <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">YouTube</a></li>
+                                class="hover:text-foundationYellow">YouTube</a></li>
                     </ul>
                 </div>
 
@@ -847,7 +1096,7 @@
 
     <!-- Back to Top Button -->
     <a href="#hero" id="backToTop"
-        class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-yellow-400 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-700 transition-opacity duration-300 opacity-0 pointer-events-none z-50">
+        class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-foundationYellow text-white px-4 py-2 rounded-full shadow-lg hover:bg-foundationGreen transition-opacity duration-300 opacity-0 pointer-events-none z-50">
         ↑
     </a>
 

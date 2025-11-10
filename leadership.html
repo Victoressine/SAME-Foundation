@@ -9,6 +9,23 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        foundationMaroon: '#4B1E23',
+                        foundationYellow: '#facc15',
+                        foundationGreen: '#16a34a',     /* green-600 */
+                        foundationGreenDark: '#15803d', /* green-700 */
+                        foundationWhite: '#ffffff',
+                    },
+                },
+            },
+        }
+    </script>
+
+
     <!-- Font Awesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -48,23 +65,23 @@
 
 </head>
 
-<body class="font-sans" style="font-family: 'Inter', sans-serif;">
+<body class="bg-slate-100">
 
 
     <!-- Preloader Overlay -->
-    <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
-        <img src="images/same.jpeg" alt="School Logo" class="w-32 h-32 object-contain animate-slidefade" />
+    <div id="preloader" class="fixed inset-0 bg-slate-100 flex items-center justify-center z-50">
+        <img src="images/same-logo.jpg" alt="foundation logo" class="w-32 h-32 object-contain animate-slidefade" />
     </div>
 
     <!-- Header & Navigation -->
     <header class="bg-slate-100 shadow sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+        <div class="max-w-[90rem] mx-auto px-4 flex justify-between items-center py-4">
 
             <!-- Logo -->
             <div class="flex items-center justify-start space-x-4">
-                <img src="images/same.jpeg" alt=" Logo" class="h-20 object-contain">
+                <img src="images/same-logo.jpg" alt="Foundation Logo" class="h-20 object-contain">
                 <h1
-                    class="text-lg sm:text-xl md:text-3xl lg:text-3xl xl:text-4xl font-extrabold bg-gradient-to-r from-[#4B1E23] via-green-700 to-yellow-400 bg-clip-text text-transparent text-center">
+                    class="text-lg sm:text-xl md:text-3xl lg:text-3xl xl:text-4xl font-extrabold bg-gradient-to-r from-foundationMaroon via-foundationGreen to-foundationYellow bg-clip-text text-transparent text-center font-serif leading-tight tracking-tight">
                     S.A.M.E Foundation
                 </h1>
 
@@ -73,84 +90,101 @@
             <!-- Desktop Navigation -->
             <!-- Home -->
             <nav class="hidden lg:flex space-x-6 text-base font-semibold">
-                <a href="index.html" class="relative group text-[#4B1E23] hover:text-green-700">
+                <a href="index.html" class="relative group text-foundationMaroon hover:text-foundationGreenDark">
                     Home
                     <span
                         class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
                     </span>
                 </a>
 
                 <!-- About -->
                 <div class="relative group">
-                    <a href="#about" class="text-[#4B1E23] hover:text-green-700 inline-flex items-center">
+                    <a href="#about"
+                        class="text-foundationMaroon hover:text-foundationGreenDark inline-flex items-center">
                         About
-                        <svg class="ml-1 w-3 h-3 text-gray-600 group-hover:text-green-600 transition-transform duration-500 transform group-hover:rotate-180"
+                        <svg class="ml-1 w-3 h-3 text-foundationMaroon group-hover:text-foundationGreenDark transition-transform duration-500 transform group-hover:rotate-180"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </a>
                     <div
-                        class="absolute left-0 mt-2 w-40 bg-green-700 text-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-out z-10">
-                        <a href="missions.html" class="block px-4 py-2 hover:bg-green-100 hover:text-green-700">Mission
+                        class="absolute left-0 mt-2 w-40 bg-foundationGreenDark text-foundationWhite shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-out z-10">
+                        <a href="missions.html"
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">Mission
                             & Vision</a>
                         <a href="leadership.html"
-                            class="block px-4 py-2 hover:bg-green-100 hover:text-green-700">Leadership</a>
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">Leadership</a>
                     </div>
                 </div>
 
                 <!-- Programs -->
-                <a href="programs.html"
-                    class="relative group text-[#4B1E23] hover:text-green-700 inline-flex items-center">
-                    Programs
-                    <span
-                        class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                    </span>
-                </a>
+                <div class="relative group">
+                    <a href="#programs"
+                        class="text-foundationMaroon hover:text-foundationGreenDark inline-flex items-center">
+                        Programs
+                        <svg class="ml-1 w-3 h-3 text-foundationMaroon group-hover:text-foundationGreenDark transition-transform duration-500 transform group-hover:rotate-180"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-40 bg-foundationGreenDark text-foundationWhite shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-out z-10">
+                        <a href="programs1es.html"
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">Education &
+                            Scholarships</a>
+                        <a href="program2yecd.html"
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">YECD</a>
+                        <a href="program3hw.html"
+                            class="block px-4 py-2 hover:bg-green-100 hover:text-foundationGreenDark">Health &
+                            Wellness</a>
+                    </div>
+                </div>
 
                 <!-- Gallery -->
                 <a href="gallery.html"
-                    class="relative group text-[#4B1E23] hover:text-green-700 inline-flex items-center">
+                    class="relative group text-foundationMaroon hover:text-foundationGreenDark inline-flex items-center">
                     Gallery
                     <span
                         class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
                     </span>
                 </a>
 
                 <!-- Contact -->
-                <a href="index.html#contact" class="relative group text-[#4B1E23] hover:text-green-700">
+                <a href="index.html#contact"
+                    class="relative group text-foundationMaroon hover:text-foundationGreenDark">
                     Contact
                     <span
                         class="absolute left-1/2 -bottom-2 flex -translate-x-1/2 space-x-1 opacity-0 group-hover:opacity-100 transition">
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
-                        <span class="w-1 h-1 bg-green-700 rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
+                        <span class="w-1 h-1 bg-foundationGreenDark rounded-full"></span>
                     </span>
                 </a>
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="lg:hidden text-3xl focus:outline-none">
+            <button id="menu-btn" class="lg:hidden text-3xl sm:text-4xl md:text-5xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
+
         </div>
 
         <!-- Mobile/Tablet Menu -->
         <!-- Home -->
-        <div id="mobile-menu" class="lg:hidden hidden bg-gray-50 border-t px-4 py-4 space-y-2 font-semibold">
-            <a href="index.html" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">Home</a>
+        <div id="mobile-menu" class="lg:hidden hidden bg-foundationMaroon-50 border-t px-4 py-4 space-y-2 font-bold text-lg sm:text-xl md:text-2xl 
+         sm:space-y-3 md:space-y-4 sm:py-6 md:py-8">
+            <a href="index.html" class="block py-2 px-2 rounded text-foundationMaroon hover:bg-green-100">Home</a>
 
             <!-- About -->
             <div>
-                <button class="w-full flex justify-between items-center px-2 py-2 text-[#4B1E23] hover:text-green-600"
+                <button
+                    class="w-full flex justify-between items-center px-2 py-2 text-foundationMaroon hover:text-foundationGreenDark"
                     onclick="toggleDropdown('about-dropdown')">
                     About
                     <svg class="w-4 h-4 transition-transform" id="about-dropdown-icon" fill="none" stroke="currentColor"
@@ -159,248 +193,599 @@
                     </svg>
                 </button>
                 <div id="about-dropdown" class="hidden pl-4 mt-1 space-y-1">
-                    <a href="missions.html" class="block px-2 py-1 text-[#4B1E23] hover:bg-green-100 rounded">Mission &
+                    <a href="missions.html"
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">Mission &
                         Vision</a>
                     <a href="leadership.html"
-                        class="block px-2 py-1 text-[#4B1E23] hover:bg-green-100 rounded">Leadership</a>
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">Leadership</a>
                 </div>
             </div>
 
             <!-- programs -->
-            <a href="programs.html" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">
-                Programs
-            </a>
+            <div>
+                <button
+                    class="w-full flex justify-between items-center px-2 py-2 text-foundationMaroon hover:text-foundationGreenDark"
+                    onclick="toggleDropdown('programs-dropdown')">
+                    Programs
+                    <svg class="w-4 h-4 transition-transform" id="about-dropdown-icon" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="programs-dropdown" class="hidden pl-4 mt-1 space-y-1">
+                    <a href="programs1es.html"
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">Education &
+                        Scholarships</a>
+                    <a href="program2yecd.html"
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">YECD</a>
+                    <a href="program3hw.html"
+                        class="block px-2 py-1 text-foundationMaroon hover:bg-green-100 rounded">Health & Wellness</a>
+                </div>
+            </div>
 
             <!-- Gallery -->
-            <a href="gallery.html" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">
+            <a href="gallery.html" class="block py-2 px-2 rounded text-foundationMaroon hover:bg-green-100">
                 Gallery
             </a>
 
             <!-- Contact -->
-            <a href="index.html#contact" class="block py-2 px-2 rounded text-[#4B1E23] hover:bg-green-100">Contact</a>
+            <a href="index.html#contact"
+                class="block py-2 px-2 rounded text-foundationMaroon hover:bg-green-100">Contact</a>
         </div>
     </header>
 
     <!-- Merged: Mobile menu, Preloader hide, AOS loader + init -->
     <script>
-        (function () {
-            // Mobile menu
-            const menuBtn = document.getElementById("menu-btn");
-            const mobileMenu = document.getElementById("mobile-menu");
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-            }
-
-            // Dropdown mobile menu
-            window.toggleDropdown = function (id) {
-                const dropdown = document.getElementById(id);
-                const icon = document.getElementById(id + '-icon');
-                if (dropdown) dropdown.classList.toggle("hidden");
-                if (icon) icon.classList.toggle("rotate-180");
-            };
-
-            // Helper: ensure AOS library is present, load dynamically if needed
-            function ensureAOS(callback) {
-                if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
-                    return callback();
+            (function () {
+                // Mobile menu
+                const menuBtn = document.getElementById("menu-btn");
+                const mobileMenu = document.getElementById("mobile-menu");
+                if (menuBtn && mobileMenu) {
+                    menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
                 }
-                // load AOS dynamically and call callback on load
-                const s = document.createElement('script');
-                s.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
-                s.async = true;
-                s.onload = () => callback();
-                s.onerror = () => {
-                    console.warn('AOS failed to load from CDN. Check network / CSP.');
-                    // still call callback to avoid blocking site
-                    callback();
+
+                // Dropdown mobile menu
+                window.toggleDropdown = function (id) {
+                    const dropdown = document.getElementById(id);
+                    const icon = document.getElementById(id + '-icon');
+                    if (dropdown) dropdown.classList.toggle("hidden");
+                    if (icon) icon.classList.toggle("rotate-180");
                 };
-                document.head.appendChild(s);
-            }
 
-            function initAOS() {
-                try {
+                // Helper: ensure AOS library is present, load dynamically if needed
+                function ensureAOS(callback) {
                     if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
-                        AOS.init({ duration: 1000, once: true, offset: 100 });
-                        // ensure AOS recalculates positions after load and after layout shifts
-                        setTimeout(() => AOS.refresh(), 50);
-                    } else {
-                        // nothing to init (AOS didn't load), silently continue
+                        return callback();
                     }
-                } catch (e) {
-                    console.error('AOS init error:', e);
-                }
-            }
-
-            // -- Preloader hide logic -- waits for full load, waits animation length, then hides overlay &
-            // initializes AOS (so animations run after preloader removed)
-            function hidePreloaderAndInitAOS() {
-                const pre = document.getElementById('preloader');
-                // duration must match your animation (2.5s) - tweak if you changed that
-                const animationWait = 2500;
-                if (!pre) {
-                    // still ensure AOS is available and init
-                    ensureAOS(initAOS);
-                    return;
+                    // load AOS dynamically and call callback on load
+                    const s = document.createElement('script');
+                    s.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+                    s.async = true;
+                    s.onload = () => callback();
+                    s.onerror = () => {
+                        console.warn('AOS failed to load from CDN. Check network / CSP.');
+                        // still call callback to avoid blocking site
+                        callback();
+                    };
+                    document.head.appendChild(s);
                 }
 
-                // Wait the animation duration, then fade preloader out and init AOS
-                setTimeout(() => {
-                    pre.style.opacity = '0';
-                    pre.style.transition = 'opacity 0.6s ease';
-                    setTimeout(() => {
-                        pre.style.display = 'none';
+                function initAOS() {
+                    try {
+                        if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
+                            AOS.init({ duration: 1000, once: true, offset: 100 });
+                            // ensure AOS recalculates positions after load and after layout shifts
+                            setTimeout(() => AOS.refresh(), 50);
+                        } else {
+                            // nothing to init (AOS didn't load), silently continue
+                        }
+                    } catch (e) {
+                        console.error('AOS init error:', e);
+                    }
+                }
+
+                // -- Preloader hide logic -- waits for full load, waits animation length, then hides overlay &
+                // initializes AOS (so animations run after preloader removed)
+                function hidePreloaderAndInitAOS() {
+                    const pre = document.getElementById('preloader');
+                    // duration must match your animation (2.5s) - tweak if you changed that
+                    const animationWait = 2500;
+                    if (!pre) {
+                        // still ensure AOS is available and init
                         ensureAOS(initAOS);
-                    }, 600);
-                }, animationWait);
-            }
+                        return;
+                    }
 
-            if (document.readyState === 'complete') {
-                hidePreloaderAndInitAOS();
-            } else {
-                window.addEventListener('load', hidePreloaderAndInitAOS);
-            }
+                    // Wait the animation duration, then fade preloader out and init AOS
+                    setTimeout(() => {
+                        pre.style.opacity = '0';
+                        pre.style.transition = 'opacity 0.6s ease';
+                        setTimeout(() => {
+                            pre.style.display = 'none';
+                            ensureAOS(initAOS);
+                        }, 600);
+                    }, animationWait);
+                }
 
-        })();
+                if (document.readyState === 'complete') {
+                    hidePreloaderAndInitAOS();
+                } else {
+                    window.addEventListener('load', hidePreloaderAndInitAOS);
+                }
+
+            })();
     </script>
 
     <!-- Hero -->
-    <section class="relative bg-[#4B1E23] text-white py-20 text-center">
+    <section class="relative bg-foundationMaroon text-foundationWhite py-20 text-center">
         <div class="max-w-4xl mx-auto px-6">
-            <h1 class="text-3xl md:text-5xl font-bold text-green-700 mb-4">Our Leadership</h1>
-            <p class="text-lg md:text-xl text-yellow-400">
-                Meet the leaders.
-            </p>
+            <h1 class="text-3xl md:text-5xl font-bold text-foundationGreen mb-4 font-sans leading-tight tracking-tight">
+                Leadership Team</h1>
         </div>
     </section>
 
     <!-- Leadership Gallery -->
     <section class="py-16 bg-slate-100" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- Grid Layout -->
-            <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="max-w-[90rem] mx-auto px-6 space-y-6">
 
-                <!-- Photo 1 -->
+            <!-- Card 1 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
                 <div
-                    class="bg-[#4B1E23] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition text-center p-4">
-                    <img src="images/profile-icon.jpg"
-                        class="w-40 h-40 mx-auto object-cover cursor-pointer rounded-full" alt="Headmaster">
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-green-700">Headmaster</h3>
-                        <p class="text-sm text-yellow-400">Providing vision and guidance for academic and spiritual
-                            growth.</p>
-                    </div>
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/rixonoc1.jpg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Advisor" onclick="openModal(this)">
                 </div>
 
-                <!-- Photo 2 -->
-                <div
-                    class="bg-[#4B1E23] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition text-center p-4">
-                    <img src="images/profile-icon.jpg"
-                        class="w-40 h-40 mx-auto object-cover cursor-pointer rounded-full" alt="Deputy Headmaster">
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-green-700">Deputy Headmaster</h3>
-                        <p class="text-sm text-yellow-400">Supporting school operations and fostering student
-                            excellence.</p>
-                    </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Dr. Rixon O. Campbell</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        President & Chief Executive Officer, SAME Foundation
+                    </p>
                 </div>
 
-                <!-- Photo 3 -->
-                <div
-                    class="bg-[#4B1E23] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition text-center p-4">
-                    <img src="images/profile-icon.jpg"
-                        class="w-40 h-40 mx-auto object-cover cursor-pointer rounded-full" alt="Academic Coordinator">
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-green-700">Academic Coordinator</h3>
-                        <p class="text-sm text-yellow-400">Overseeing curriculum and promoting high academic standards.
-                        </p>
-                    </div>
-                </div>
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Dr. Rixon O. Campbell is the President and Chief Executive Officer of the SAME
+                        Foundation, a global nonprofit organization dedicated to advancing education,
+                        community development, and youth empowerment across Africa and the diaspora. A
+                        visionary leader and strategist, Dr. Campbell has built a distinguished career focused
+                        on transforming lives through access, opportunity, and leadership development.
+                    </p>
 
-                <!-- Photo 4 -->
-                <div
-                    class="bg-[#4B1E23] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition text-center p-4">
-                    <img src="images/profile-icon.jpg"
-                        class="w-40 h-40 mx-auto object-cover cursor-pointer rounded-full" alt="Sports Director">
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-green-700">Sports Director</h3>
-                        <p class="text-sm text-yellow-400">Encouraging teamwork, discipline, and athletic excellence.
-                        </p>
-                    </div>
-                </div>
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Under his leadership, the SAME Foundation has established impactful partnerships
+                        that have provided scholarships, skills training, and community infrastructure
+                        improvements in underserved regions, particularly in Ghana. His work reflects a
+                        lifelong commitment to creating generational change through education, sustainable
+                        development, and global collaboration.
+                    </p>
 
-                <!-- Photo 5 -->
-                <div
-                    class="bg-[#4B1E23] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition text-center p-4">
-                    <img src="images/profile-icon.jpg"
-                        class="w-40 h-40 mx-auto object-cover cursor-pointer rounded-full" alt="Arts & Culture Head">
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-green-700">Arts & Culture Head</h3>
-                        <p class="text-sm text-yellow-400">Promoting creativity, culture, and student talents.</p>
-                    </div>
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Dr. Campbell is also an accomplished organizational development expert, educator,
+                        and international consultant with extensive experience in higher education,
+                        multicultural affairs, and nonprofit leadership. His belief in the power of service,
+                        inclusion, and global citizenship continues to inspire the Foundation’s mission to
+                        empower communities and shape future leaders.
+                    </p>
                 </div>
-
-                <!-- Photo 6 -->
-                <div
-                    class="bg-[#4B1E23] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition text-center p-4">
-                    <img src="images/profile-icon.jpg"
-                        class="w-40 h-40 mx-auto object-cover cursor-pointer rounded-full" alt="Spiritual Leader">
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-green-700">Spiritual Leader</h3>
-                        <p class="text-sm text-yellow-400">Guiding students in faith, morals, and character development.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Photo 7 -->
-                <div
-                    class="bg-[#4B1E23] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition text-center p-4">
-                    <img src="images/profile-icon.jpg"
-                        class="w-40 h-40 mx-auto object-cover cursor-pointer rounded-full" alt="Administration Head">
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-green-700">Administration Head</h3>
-                        <p class="text-sm text-yellow-400">Ensuring smooth operations and a safe, supportive school
-                            environment.</p>
-                    </div>
-                </div>
-
-                <!-- Photo 8 -->
-                <div
-                    class="bg-[#4B1E23] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition text-center p-4">
-                    <img src="images/profile-icon.jpg"
-                        class="w-40 h-40 mx-auto object-cover cursor-pointer rounded-full"
-                        alt="Finance & Operations Manager">
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-green-700">Finance & Operations Manager</h3>
-                        <p class="text-sm text-yellow-400">Overseeing finances, resources, and operational efficiency to
-                            support
-                            school growth.</p>
-                    </div>
-                </div>
-
             </div>
-        </div>
+
+
+            <!-- Card 2 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/kodwo1.jpeg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Chairman, SAME Foundation Ghana" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Mr. Al-Hassan Kodwo Baidoo</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Chairman, SAME Foundation Ghana
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Mr. Al-Hassan Kodwo Baidoo is an educationist and development advocate with
+                        extensive experience in educational leadership, youth empowerment, and
+                        community development. He holds a Bachelor’s degree in Industrial Arts from
+                        KNUST, a Master’s degree in Educational Leadership and Innovation from the
+                        University of Education, Winneba, and a Master of Philosophy in Educational
+                        Leadership and School Improvement from Methodist University, Ghana.
+                    </p>
+
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        As Chairman of SAME Foundation Ghana, he provides strategic leadership in
+                        advancing the Foundation’s mission to promote quality education, child welfare, and
+                        women’s empowerment. Mr. Baidoo also leads the Green Saints Foundation, a
+                        school-based climate change initiative, and serves as an Executive Member of
+                        Junior Shapers Africa.
+                    </p>
+
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        He brings to his work a wealth of experience from his earlier roles in corporate
+                        management and a lifelong commitment to education as a driver of social
+                        transformation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/robert-kaye.jpg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Co-Chairman, SAME Foundation Ghana" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Robert Emmanuel Kaye</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Co-Chairman, SAME Foundation Ghana
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Robert Emmanuel Kaye is a seasoned Client Service and Research Professional with over a decade
+                        of experience in market research, client management, and strategic insight across Africa. He has
+                        worked with top organizations such as IPSOS Ghana, Kantar Millward Brown, and Bureau of Market
+                        and Social Research, delivering impactful solutions for leading brands including MTN, Coca-Cola,
+                        Nestlé, Vodafone, and Guinness Ghana.
+                    </p>
+
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        He holds a BSc from the University of Ghana and professional certifications from the University
+                        of Georgia, the Graduate School of Governance and Leadership, and the Banking College of Ghana.
+                    </p>
+
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Robert is also a passionate advocate for health and safety and actively supports community
+                        initiatives that promote education and youth empowerment.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/thelma1.jpeg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Women & Girl Empowerment" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Dr. Thelma Frimpong Mensah</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Women & Girl Empowerment, SAME Foundation Ghana
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Dr. Thelma Frimpong Mensah is an accomplished leader with expertise in ESG and sustainability,
+                        business administration, and finance. She holds a Doctorate in Business Administration from SMC
+                        University in Switzerland, an MBA in Finance from Sikkim Manipal University in India, and a BA
+                        in Sociology and Political Science from the University of Ghana.
+                    </p>
+
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        She currently serves as Billing Operations Manager and CFO at Olidia Care Inc. (USA), Governing
+                        Council Member of the Institute of Project Management Professionals (Ghana), and Senior Vice
+                        President of Education at the African Youth Institute.
+                    </p>
+
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        With previous experience as Senior Consultant at Deloitte Ghana and CEO of Desert Dew Services
+                        and Consultancy, Dr. Mensah is also a respected speaker passionate about women empowerment,
+                        entrepreneurship, and education.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/christine-barnor.jpg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Advisor" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Mrs. Christine Barnor</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Advisor, SAME Foundation Ghana
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        waiting for content
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/angela-n.jpg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Advisor" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Qb. Angela N. Mauldin</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Advisor, SAME Foundation Ghana
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Angela is an accomplished leader with extensive experience in community development, housing,
+                        and philanthropy. She has served on several Boards, including Charlotte Rotary, The Housing
+                        Partnership, and the Affordable Housing Coalition, and has provided expert counsel to
+                        organisations such as the United Negro College Fund and Habitat for Humanity. With a strong
+                        background in financial management, she has overseen a $25M unrestricted budget and contributed
+                        to key federal and private grant committees.
+                    </p>
+
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Currently, Angela champions educational access and nonprofit growth through scholarships,
+                        capacity building, and strategic advising. She serves as Chairwoman of If You Can Write You Can
+                        Read, Strategic Advisor for Shakers and Movers Educational Foundation (S.A.M.E.) in Ghana, and
+                        is a member of Sheroes International – Ghana Chapter. She holds professional certifications in
+                        Housing and Economic Development Finance, Construction Management, and Procurement.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/derick-hokey.jpg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Financial Officer" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Derick Nestor Hokey</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Financial Officer, SAME Foundation Ghana
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Derick Nestor Hokey, CPA, serves as the Financial Officer of the SAME Foundation.
+                        A seasoned auditor and financial strategist with international experience, Derick
+                        brings a wealth of expertise in corporate accounting, compliance, and fiscal
+                        management. He currently serves as Chief Accountant and Auditor for several
+                        companies in Ghana, where he provides leadership in financial reporting and
+                        operational efficiency. At the SAME Foundation, he ensures transparency,
+                        accountability, and sound financial stewardship—strengthening the Foundation’s
+                        ability to deliver sustainable impact across its educational, health, and community
+                        development initiatives.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/profile-icon.jpg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Legal Affairs" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Dr. Lom Nuku Ahlijah</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Legal Affairs, SAME Foundation Ghana
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        waiting for content
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/profile-icon.jpg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Exec. Secretary & Programs Officer" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Mr. Richmond Anane-simon</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Exec. Secretary & Programs Officer
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Richmond Anane-Simon is a Development Strategist, Project Management Expert, and Innovation
+                        Advocate dedicated to driving social impact and sustainable growth across Africa. With over five
+                        years of experience in international development, he has collaborated with organisations
+                        including UNDP, UNICEF, and GIZ to empower young innovators and strengthen local
+                        entrepreneurship ecosystems.
+                    </p>
+
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        He holds a First-Class degree in Actuarial Science from Pentecost University, an MBA in
+                        International Business Management from Dr. D.Y. Patil Vidyapeeth (India), and is pursuing a
+                        Doctor of Business Leadership at the University of South Africa. A published author and peer
+                        reviewer, Richmond’s work explores leadership, technology, and entrepreneurship while advancing
+                        inclusive development across the continent.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/felix-dzineku.jpg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Immigration Advisor" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Mr. Felix Dzineku</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Immigration Advisor, SAME Foundation Ghana
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        waiting for content
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/profile-icon.jpg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="IT Coordinator, SAME Foundation" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Mr. Kelvin Twaiah</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        IT Coordinator, SAME Foundation
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Kelvin Tawiah is a skilled information technologist with expertise in network systems,
+                        software solutions, and digital innovation. He has a strong background in managing
+                        and optimizing IT operations to enhance organizational efficiency and connectivity.
+                        As the IT Coordinator for the Shakers and Movers Educational (SAME) Foundation,
+                        Kelvin oversees the Foundation’s technology initiatives, ensuring secure, reliable,
+                        and forward-thinking digital systems that support its global mission of education and
+                        community empowerment. He is presently pursuing an MBA at the Ibn Haldun
+                        University in Istanbul, Turkey.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div
+                class="bg-foundationMaroon rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center text-center">
+                <!-- Profile Image -->
+                <div
+                    class="w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-400 flex items-center justify-center">
+                    <img src="images/Victor1.jpeg"
+                        class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                        alt="Assistant IT Coordinator, SAME Foundation" onclick="openModal(this)">
+                </div>
+                <!-- Bio -->
+                <div class="max-w-6xl text-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-foundationGreen mb-2">Mr. Victor E. Obioha</h3>
+                    <p class="text-lg font-bold sm:text-base text-foundationYellow mb-4">
+                        Assistant IT Coordinator, SAME Foundation
+                    </p>
+                </div>
+
+                <div class="max-w-6xl text-left">
+                    <p
+                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                        Victor Essine Obioha is an accomplished information technologist and full-stack
+                        developer passionate about leveraging technology to drive innovation and efficiency.
+                        With expertise in both front-end and back-end development, Victor brings a
+                        comprehensive understanding of system design, digital integration, and user
+                        experience optimization. As the Assistant IT Coordinator for the Shakers and Movers
+                        Educational (SAME) Foundation, he supports the organization’s digital infrastructure,
+                        ensuring seamless technological operations that enhance communication,
+                        collaboration, and global outreach.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Fullscreen Modal -->
     <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50 p-4">
-        <!-- Close -->
         <span onclick="closeModal()"
             class="absolute top-4 right-6 text-white text-4xl md:text-5xl cursor-pointer font-bold">&times;</span>
-
-        <!-- Image -->
         <img id="modalImage" class="max-h-[80vh] max-w-[90vw] w-auto h-auto rounded-xl shadow-lg object-contain">
     </div>
 
     <script>
-        const images = Array.from(document.querySelectorAll("#gallery img"));
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImage");
 
-        function openModal(index) {
+        function openModal(img) {
             modal.classList.remove("hidden");
             modal.classList.add("flex");
-            modalImg.src = images[index].src;
-            modalImg.alt = images[index].alt;
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
         }
 
         function closeModal() {
@@ -408,58 +793,52 @@
             modal.classList.remove("flex");
         }
 
-        images.forEach((img, index) => {
-            img.addEventListener("click", () => openModal(index));
-        });
-
         modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
+            if (e.target === modal) closeModal();
         });
 
         document.addEventListener("keydown", (e) => {
-            if (!modal.classList.contains("hidden") && e.key === "Escape") {
-                closeModal();
-            }
+            if (!modal.classList.contains("hidden") && e.key === "Escape") closeModal();
         });
     </script>
 
-
     <!-- Footer -->
-    <footer id="contact" class="bg-[#4B1E23] text-white py-12 mt-16 relative" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-6">
+    <footer id="contact" class="bg-foundationMaroon text-foundationWhite py-12 mt-16 relative" data-aos="fade-up">
+        <div class="max-w-[90rem] mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
 
                 <!-- Logo + Write-up -->
                 <div>
-                    <img src="images/same.jpeg" alt="School Logo" class="w-28 mx-auto md:mx-0 mb-4">
-                    <h3 class="text-lg font-semibold text-yellow-400">S.A.M.E Foundation</h3>
-                    <p class="text-green-700 mt-2 text-1xl">
-                        "Mott"
+                    <img src="images/same-logo.jpg" alt="Same-Logo" class="w-28 mx-auto md:mx-0 mb-4">
+                    <h3 class="text-lg font-semibold text-foundationYellow font-serif leading-tight tracking-tight">
+                        S.A.M.E Foundation</h3>
+                    <p class="text-foundationWhite mt-2 text-1xl font-serif leading-tight tracking-tight">
+                        "Creating change that lasts"
+                    </p>
+
                 </div>
 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-3 text-yellow-400">Quick Links</h3>
+                    <h3 class="text-lg font-semibold mb-3 text-foundationYellow font-serif leading-tight tracking-tight">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
-                        <li><a href="blog.html" class="hover:text-yellow-400">Blog</a></li>
-                        <li><a href="programs.html" class="hover:text-yellow-400">Programs</a></li>
-                        <li><a href="missions.html" class="hover:text-yellow-400">About Us</a></li>
+                        <li><a href="index.html" class="hover:text-foundationYellow">Home</a></li>
+                        <li><a href="blog.html" class="hover:text-foundationYellow">Blog</a></li>
+                        <li><a href="programs.html" class="hover:text-foundationYellow">Programs</a></li>
+                        <li><a href="missions.html" class="hover:text-foundationYellow">About Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div class="space-y-3">
                     <div>
-                        <h3 class="text-lg font-semibold mb-3 text-yellow-400">Contact Info</h3>
+                        <h3 class="text-lg font-semibold mb-3 text-foundationYellow font-serif leading-tight tracking-tight">Contact Info</h3>
                     </div>
 
                     <!-- Phone 1 -->
                     <div class="text-sm">
                         <a href="tel:+233000000000"
-                            class="inline-flex items-center text-slate-100 hover:text-yellow-400 transition">
+                            class="inline-flex items-center text-slate-100 hover:text-foundationYellow transition">
                             <i class="fas fa-phone-alt mr-2 text-slate-100"></i> +233 (0) 000000000
                         </a>
                     </div>
@@ -467,7 +846,7 @@
                     <!-- Phone 2 -->
                     <div class="text-sm">
                         <a href="tel:+233000000000"
-                            class="inline-flex items-center text-slate-100 hover:text-yellow-400 transition">
+                            class="inline-flex items-center text-slate-100 hover:text-foundationYellow transition">
                             <i class="fas fa-phone-alt mr-2 text-slate-100"></i> +233 (0) 000000000
                         </a>
                     </div>
@@ -483,18 +862,18 @@
 
                 <!-- Social Media -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-3 text-yellow-400">Follow Us</h3>
+                    <h3 class="text-lg font-semibold mb-3 text-foundationYellow font-serif leading-tight tracking-tight">Follow Us</h3>
                     <ul class="space-y-2">
                         <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">Facebook</a></li>
+                                class="hover:text-foundationYellow">Facebook</a></li>
                         <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">Instagram</a></li>
+                                class="hover:text-foundationYellow">Instagram</a></li>
                         <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">Twitter</a></li>
+                                class="hover:text-foundationYellow">Twitter</a></li>
                         <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">LinkedIn</a></li>
+                                class="hover:text-foundationYellow">LinkedIn</a></li>
                         <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
-                                class="hover:text-yellow-400">YouTube</a></li>
+                                class="hover:text-foundationYellow">YouTube</a></li>
                     </ul>
                 </div>
 
@@ -509,7 +888,7 @@
 
     <!-- Back to Top Button -->
     <a href="#hero" id="backToTop"
-        class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-yellow-400 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-700 transition-opacity duration-300 opacity-0 pointer-events-none z-50">
+        class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-foundationYellow text-white px-4 py-2 rounded-full shadow-lg hover:bg-foundationGreen transition-opacity duration-300 opacity-0 pointer-events-none z-50">
         ↑
     </a>
 
