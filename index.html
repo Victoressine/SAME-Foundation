@@ -317,8 +317,22 @@
     </script>
 
     <!-- HERO -->
-    <section class="hero-bg text-foundationWhite">
-        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 py-60" data-aos="fade-up">
+    <section class="hero-bg text-foundationWhite relative overflow-hidden">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/35 z-10"></div>
+
+        <!-- Slideshow Backgrounds -->
+        <div id="hero-slideshow" class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
+                style="background-image: url('images/image0003.jpg');"></div>
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+                style="background-image: url('images/image0004.jpg');"></div>
+            <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+                style="background-image: url('images/image0005.jpg');"></div>
+        </div>
+
+        <!-- Original HERO CONTENT -->
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 py-20 md:py-60 relative z-20" data-aos="fade-up">
             <div class="max-w-3xl">
                 <h1
                     class="text-4xl md:text-5xl font-extrabold leading-relaxed font-sans text-foundationGreen bg-clip-text text-transparent inline-block">
@@ -331,12 +345,11 @@
                     Together, let’s create lasting change — one life at a time.
                 </p>
 
-
                 <!-- NEW BLOG BUTTON -->
                 <div class="mt-6">
                     <a href="blog.html"
                         class="inline-block bg-foundationYellow text-foundationMaroon text-sm md:text-base font-semibold px-6 py-3 rounded-lg shadow-md
-                    transition-all duration-300 animate-zoom hover:bg-foundationGreenDark hover:text-foundationWhite hover:scale-105">
+                transition-all duration-300 animate-zoom hover:bg-foundationGreenDark hover:text-foundationWhite hover:scale-105">
                         Visit Our Blog
                     </a>
                 </div>
@@ -350,7 +363,7 @@
 
     <!-- Combined Style -->
     <style>
-        /* HERO BACKGROUND */
+        /* HERO BACKGROUND REMAINS THE SAME */
         .hero-bg {
             background-image: linear-gradient(180deg,
                     rgba(0, 0, 0, 0.35),
@@ -359,6 +372,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
         }
 
         /* ZOOM ANIMATION */
@@ -377,7 +391,35 @@
         .animate-zoom {
             animation: zoom 2s ease-in-out infinite;
         }
+
+        /* Slideshow transitions */
+        #hero-slideshow div {
+            transition: opacity 1s ease-in-out;
+        }
     </style>
+
+    <!-- HERO SLIDESHOW SCRIPT -->
+    <script>
+        const slides = document.querySelectorAll('#hero-slideshow div');
+        let current = 0;
+
+        setInterval(() => {
+            slides[current].classList.remove('opacity-100');
+            slides[current].classList.add('opacity-0');
+            current = (current + 1) % slides.length;
+            slides[current].classList.remove('opacity-0');
+            slides[current].classList.add('opacity-100');
+        }, 20000);
+
+        // Optional subtle parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            slides.forEach(slide => {
+                slide.style.transform = `translateY(${scrolled * 0.2}px)`;
+            });
+        });
+    </script>
+
 
 
 
@@ -387,33 +429,33 @@
         <section id="about" class="bg-foundationMaroon rounded-lg shadow px-6 py-10">
             <div class="grid lg:grid-cols-2 gap-8 items-center">
                 <!-- Text Content -->
-                <div data-aos="fade-right">
-                    <h2
-                        class="text-2xl md:text-3xl text-foundationGreen font-extrabold text-center mb-4 leading-relaxed font-sans">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl text-foundationGreen font-extrabold text-center mt-6 leading-relaxed font-sans tracking-tight"
+                        data-aos="fade-right">
                         Welcome to the S.A.M.E Foundation
                     </h2>
 
                     <!-- Decorative Line with Star Icon -->
-                    <div class="flex items-center justify-center mb-6 w-auto mx-auto">
-                        <div class="flex-grow border-t border-foundationGreen max-w-[40%]"></div>
-                        <div class="mx-3 text-foundationGreen text-xl md:text-2xl">
+                    <div class="flex items-center justify-center mb-6 mx-auto w-full max-w-xl px-4"
+                        data-aos="fade-right">
+                        <div class="flex-1 border-t border-foundationGreen"></div>
+                        <div class="mx-3 text-foundationGreen text-xl sm:text-2xl">
                             <i class="fas fa-hands-helping" aria-hidden="true"></i>
                         </div>
-                        <div class="flex-grow border-t border-foundationGreen max-w-[40%]"></div>
+                        <div class="flex-1 border-t border-foundationGreen"></div>
                     </div>
 
 
-
-                    <p
-                        class="mt-4 mb-4 text-foundationWhite first-letter:text-5xl first-letter:font-bold first-letter:text-foundationYellow first-letter:float-left first-letter:mr-2">
+                    <p class="mt-4 mb-4 text-foundationWhite first-letter:text-5xl first-letter:font-bold first-letter:text-foundationYellow first-letter:float-left first-letter:mr-2"
+                        data-aos="fade-right">
                         At the SAME Foundation, we believe that education is the cornerstone of
                         transformation and empowerment. Our mission is to create pathways of opportunity
                         for under-resourced students, families, and communities through access to quality
                         education, leadership development, and global exposure.
                     </p>
 
-                    <p
-                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                    <p class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight"
+                        data-aos="fade-right">
                         Since our founding, we have worked tirelessly to bridge the gap between potential
                         and opportunity—empowering young minds to rise above barriers and become
                         catalysts for positive change in their communities and beyond. Through strategic
@@ -422,16 +464,16 @@
                         to impact lives across generations.
                     </p>
 
-                    <p
-                        class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                    <p class="text-lg text-foundationWhite leading-relaxed mb-4 font-serif leading-tight tracking-tight"
+                        data-aos="fade-right">
 
                         We invite you to explore our programs, celebrate our success stories, and join us in
                         shaping a world where education and equity move hand in hand. Together, we are
                         shakers and movers—creating change that lasts.
                     </p>
 
-                    <p
-                        class="text-lg text-foundationYellow font-bold leading-relaxed mb-4 font-serif leading-tight tracking-tight">
+                    <p class="text-lg text-foundationYellow font-bold leading-relaxed mb-4 font-serif leading-tight tracking-tight"
+                        data-aos="fade-right">
 
                         Welcome to the movement. Welcome to SAME Foundation.</p>
 
@@ -453,9 +495,10 @@
 
 
         <!-- Initiatives -->
-        <section id="programs" class="mt-8 scroll-smooth" data-aos="fade-down">
+        <section id="programs" class="mt-8 scroll-smooth">
             <div class="flex items-center justify-between">
-                <h2 class="text-3xl text-foundationGreen font-bold font-sans leading-tight tracking-tight">Our
+                <h2 class="text-3xl text-foundationGreen font-bold font-sans leading-tight tracking-tight"
+                    data-aos="fade-down">Our
                     Initiatives</h2>
             </div>
 
@@ -465,23 +508,25 @@
                     class="bg-foundationWhite p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
 
                     <!-- Image -->
-                    <div class="mb-6 overflow-hidden rounded-2xl">
+                    <div class="mb-6 overflow-hidden rounded-2xl" data-aos="fade-up">
                         <img src="images/foundation.jpeg" alt="Education & Scholarships"
                             class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
                     <!-- Content -->
-                    <h3 class="text-xl text-foundationGreen font-semibold mb-4 font-sans leading-tight tracking-tight">
+                    <h3 class="text-xl text-foundationGreen font-semibold mb-4 font-sans leading-tight tracking-tight"
+                        data-aos="fade-up">
                         Education & Scholarships</h3>
-                    <p
-                        class="text-gray-900 mb-6 text-sm sm:text-base md:text-lg font-serif leading-tight tracking-tight">
+                    <p class="text-gray-900 mb-6 text-sm sm:text-base md:text-lg font-serif leading-tight tracking-tight"
+                        data-aos="fade-up">
                         Our Scholarship Programme is dedicated to unlocking potential and empowering young minds with
                         the opportunity to dream bigger. We believe that financial barriers should never stand in the
                         way of talent, ambition, and a strong desire to make a difference.
                     </p>
 
                     <a href="programs1es.html"
-                        class="inline-flex items-center text-foundationGreen font-semibold hover:underline group font-sans leading-tight tracking-tight">
+                        class="inline-flex items-center text-foundationGreen font-semibold hover:underline group font-sans leading-tight tracking-tight"
+                        data-aos="fade-up">
                         Find more
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" fill="none"
@@ -496,23 +541,25 @@
                     class="bg-foundationWhite p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
 
                     <!-- Image -->
-                    <div class="mb-6 overflow-hidden rounded-2xl">
+                    <div class="mb-6 overflow-hidden rounded-2xl" data-aos="fade-up">
                         <img src="images/foundation.jpeg" alt="Youth Empowerment & Community Development"
                             class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
                     <!-- Content -->
-                    <h3 class="text-xl text-foundationGreen font-semibold mb-4 font-sans leading-tight tracking-tight">
+                    <h3 class="text-xl text-foundationGreen font-semibold mb-4 font-sans leading-tight tracking-tight"
+                        data-aos="fade-up">
                         Youth Empowerment & Community Development</h3>
-                    <p
-                        class="text-gray-900 mb-6 text-sm sm:text-base md:text-lg font-serif leading-tight tracking-tight">
+                    <p class="text-gray-900 mb-6 text-sm sm:text-base md:text-lg font-serif leading-tight tracking-tight"
+                        data-aos="fade-up">
                         Our Youth Empowerment & Community Development Programme is built on the belief that young people
                         are the driving force of sustainable change. We equip them with the skills, confidence, and
                         opportunities they need to shape their future and uplift their communities.
                     </p>
 
                     <a href="program2yecd.html"
-                        class="inline-flex items-center text-foundationGreen font-semibold hover:underline group font-sans leading-tight tracking-tight">
+                        class="inline-flex items-center text-foundationGreen font-semibold hover:underline group font-sans leading-tight tracking-tight"
+                        data-aos="fade-up">
                         Find more
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" fill="none"
@@ -527,16 +574,17 @@
                     class="bg-foundationWhite p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
 
                     <!-- Image -->
-                    <div class="mb-6 overflow-hidden rounded-2xl">
+                    <div class="mb-6 overflow-hidden rounded-2xl" data-aos="fade-up">
                         <img src="images/foundation.jpeg" alt="Health & Wellnes"
                             class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
                     <!-- Content -->
-                    <h3 class="text-xl text-foundationGreen font-semibold mb-4 font-sans leading-tight tracking-tight">
+                    <h3 class="text-xl text-foundationGreen font-semibold mb-4 font-sans leading-tight tracking-tight"
+                        data-aos="fade-up">
                         Health & Wellness</h3>
-                    <p
-                        class="text-gray-900 mb-6 text-sm sm:text-base md:text-lg font-serif leading-tight tracking-tight">
+                    <p class="text-gray-900 mb-6 text-sm sm:text-base md:text-lg font-serif leading-tight tracking-tight"
+                        data-aos="fade-up">
                         At <strong>SAME</strong> foundation, we believe that a healthy community is a thriving
                         community. Our Health &
                         Wellness programmes are designed to promote physical, mental, and emotional well-being for
@@ -545,7 +593,8 @@
                     </p>
 
                     <a href="program3hw.html"
-                        class="inline-flex items-center text-foundationGreen font-semibold hover:underline group font-sans leading-tight tracking-tight">
+                        class="inline-flex items-center text-foundationGreen font-semibold hover:underline group font-sans leading-tight tracking-tight"
+                        data-aos="fade-up">
                         Find more
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" fill="none"
@@ -564,7 +613,8 @@
                     data-aos="fade-down font-sans leading-tight tracking-tight">From Our Journal</h2>
                 <a href="blog.html"
                     class="inline-block bg-foundationYellow text-foundationMaroon text-sm font-semibold px-3 py-2 rounded-lg shadow-md 
-           transition-all duration-300 animate-zoom hover:bg-foundationGreen hover:text-foundationWhite hover:scale-105">
+           transition-all duration-300 animate-zoom hover:bg-foundationGreen hover:text-foundationWhite hover:scale-105"
+                    data-aos="fade-down">
                     Visit Our Blog
                 </a>
 
@@ -588,33 +638,39 @@
                 </style>
             </div>
 
-            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-down">
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
                 <!-- CARD 1 -->
                 <article class="p-4 border rounded-lg bg-slate-100">
-                    <img src="images/foundation.jpeg" alt="Blog Image"
-                        class="rounded-lg object-cover w-full h-64 mb-4" />
-                    <h4 class="text-2xl font-semibold text-foundationGreen font-sans leading-tight tracking-tight">
+                    <img src="images/foundation.jpeg" alt="Blog Image" class="rounded-lg object-cover w-full h-64 mb-4"
+                        data-aos="fade-up">
+                    <h4 class="text-2xl font-semibold text-foundationGreen font-sans leading-tight tracking-tight"
+                        data-aos="fade-up">
                         Ghana-Turkey Educational Initiative</h4>
-                    <p class="mt-2 text-lg text-gray-900 font-serif leading-tight tracking-tight">The Ghana–Turkey
+                    <p class="mt-2 text-lg text-gray-900 font-serif leading-tight tracking-tight" data-aos="fade-up">The
+                        Ghana–Turkey
                         SAME Foundation 2025 Educational Impact Report In Collaboration with RixonOC Management
                         Consulting and Communications, LLC (USA)</p>
                     <button onclick="openBlogModal(1)"
-                        class="mt-4 bg-foundationGreen hover:bg-foundationYellow text-foundationWhite hover:text-foundationMaroon text-sm px-4 py-2 rounded transition">
+                        class="mt-4 bg-foundationGreen hover:bg-foundationYellow text-foundationWhite hover:text-foundationMaroon text-sm px-4 py-2 rounded transition"
+                        data-aos="fade-up">
                         Read More
                     </button>
                 </article>
 
                 <!-- CARD 2 -->
-                <article class="p-4 border rounded-lg bg-slate-100">
-                    <img src="images/foundation.jpeg" alt="Blog Image"
-                        class="rounded-lg object-cover w-full h-64 mb-4" />
-                    <h4 class="text-2xl font-semibold text-foundationGreen font-sans leading-tight tracking-tight">Small
+                <article class="p-4 border rounded-lg bg-slate-100" data-aos="fade-up">
+                    <img src="images/foundation.jpeg" alt="Blog Image" class="rounded-lg object-cover w-full h-64 mb-4"
+                        data-aos="fade-up">
+                    <h4 class="text-2xl font-semibold text-foundationGreen font-sans leading-tight tracking-tight"
+                        data-aos="fade-up">Small
                         Grants, Big Impact</h4>
-                    <p class="mt-2 text-lg text-gray-900 font-serif leading-tight tracking-tight">Stories of women
+                    <p class="mt-2 text-lg text-gray-900 font-serif leading-tight tracking-tight" data-aos="fade-up">
+                        Stories of women
                         entrepreneurs who scaled their businesses
                         with our micro-grants.</p>
                     <button onclick="openBlogModal(2)"
-                        class="mt-4 bg-foundationGreen hover:bg-foundationYellow text-foundationWhite hover:text-foundationMaroon text-sm px-4 py-2 rounded transition">
+                        class="mt-4 bg-foundationGreen hover:bg-foundationYellow text-foundationWhite hover:text-foundationMaroon text-sm px-4 py-2 rounded transition"
+                        data-aos="fade-up">
                         Read More
                     </button>
                 </article>
@@ -643,22 +699,20 @@
                                 class="text-gray-600 hover:text-red-600 text-3xl leading-none">&times;</button>
                         </div>
 
-                        <div
-                            class="text-gray-900 text-base sm:text-lg font-serif leading-snug mt-4">
+                        <div class="text-gray-900 text-base sm:text-lg font-serif leading-snug mt-4">
 
-                            <p class="mb-4 text-center font-bold text-lg sm:text-xl md:text-xl lg:text-1xl"
-                                data-aos="fade-up">
+                            <p class="mb-4 text-center font-bold text-lg sm:text-xl md:text-xl lg:text-1xl">
                                 SAME Foundation 2025 Educational Impact Report<br>
                                 In Collaboration with RixonOC Management Consulting and Communications, LLC (USA)
                             </p>
 
-                            <p class="font-semibold mb-4" data-aos="fade-up">
+                            <p class="font-semibold mb-4">
                                 Date: 1st October 2025<br>
                                 Prepared by: Senior Educational Consultant, Shakers and Movers Educational (SAME)
                                 Foundation
                             </p>
 
-                            <p class="mb-4" data-aos="fade-up">
+                            <p class="mb-4">
                                 <strong>Introduction:</strong>
                                 <br>
                                 The Shakers and Movers Educational (SAME) Foundation, in partnership with
@@ -669,7 +723,7 @@
                                 education—one student, one community at a time.
                             </p>
 
-                            <p class="mb-4" data-aos="fade-up">
+                            <p class="mb-4">
                                 <strong>Program Overview:</strong>
                                 <br>
                                 In the first half of 2025, the SAME Foundation successfully advised and supported
@@ -680,17 +734,17 @@
                                 competence among Africa’s emerging leaders.
                             </p>
 
-                            <p class="mb-4" data-aos="fade-up">
+                            <p class="mb-4">
                                 Through the technical and strategic guidance of RixonOC Management Consulting
                                 and Communications, LLC, the program offered comprehensive educational
                                 advising—ranging from academic placement and scholarship acquisition to
                                 intercultural readiness and leadership coaching.
                             </p>
 
-                            <p class="font-semibold mt-4" data-aos="fade-up">
+                            <p class="font-semibold mt-4">
                                 Program Objectives:
                             </p>
-                            <ul class="list-disc ml-6 mt-2 space-y-2" data-aos="fade-up">
+                            <ul class="list-disc ml-6 mt-2 space-y-2">
                                 <li>To promote access to higher education for deserving Ghanaian students
                                     through international partnerships.
                                 </li>
@@ -704,10 +758,10 @@
                                 </li>
                             </ul>
 
-                            <p class="mt-4 font-semibold" data-aos="fade-up">
+                            <p class="mt-4 font-semibold">
                                 Key Achievements:
                             </p>
-                            <ul class="list-disc ml-6 mt-2 space-y-2" data-aos="fade-up">
+                            <ul class="list-disc ml-6 mt-2 space-y-2">
                                 <li>4 master’s students successfully enrolled in reputable Turkish universities for
                                     postgraduate studies in diverse fields, including economics, education, public
                                     administration, and communication.
@@ -726,7 +780,7 @@
                                     for a long-term international education pipeline.
                                 </li>
                             </ul>
-                            <p class="mt-4" data-aos="fade-up">
+                            <p class="mt-4">
                                 <strong>Impact on Ghanaian Communities:</strong>
                                 The long-term impact of this educational initiative extends beyond the four recipients.
                                 By enabling access to quality undergraduate and graduate education abroad, the
@@ -735,32 +789,32 @@
                                 innovation and sustainable change upon their return.
                             </p>
 
-                            <p class="mt-4" data-aos="fade-up">
+                            <p class="mt-4">
                                 <strong>Community Empowerment:</strong>
                                 These scholars serve as role models and catalysts for
                                 other young Ghanaians, demonstrating that international education is attainable
                                 through hard work, mentorship, and strategic support.
                             </p>
 
-                            <p class="mt-4" data-aos="fade-up">
+                            <p class="mt-4">
                                 <strong>Knowledge Transfer:</strong>
                                 Graduates are expected to contribute to local development
                                 through research, leadership, and community-based projects upon completion of
                                 their programs.
                             </p>
 
-                            <p class="mt-4" data-aos="fade-up">
+                            <p class="mt-4">
                                 <strong>Generational Transformation:</strong>
                                 As these students progress in their careers, they will
                                 uplift families and communities, fostering a cycle of educational advancement and
                                 socio-economic mobility.
                             </p>
 
-                            <p class="font-semibold mt-4" data-aos="fade-up">
+                            <p class="font-semibold mt-4">
                                 Conclusion
                             </p>
 
-                            <p class="mt-2" data-aos="fade-up">
+                            <p class="mt-2">
                                 The SAME Foundation’s collaboration with RixonOC Management Consulting and
                                 Communications, LLC has proven that strategic partnerships can create measurable
                                 educational impact. The success of the 2025 cohort underscores the transformative
@@ -771,11 +825,11 @@
                                 transcends generations.
                             </p>
 
-                            <p class="font-semibold mt-4" data-aos="fade-up">
+                            <p class="font-semibold mt-4">
                                 Next Steps:
                             </p>
 
-                            <ul class="list-disc ml-6 mt-2 space-y-2" data-aos="fade-up">
+                            <ul class="list-disc ml-6 mt-2 space-y-2">
                                 <li>Expand the scholarship advisory program to reach 20 new applicants in 2026
                                     academic year.
                                 </li>
@@ -791,7 +845,7 @@
                                     contribute to national development projects.
                                 </li>
                             </ul>
-                            <p class="mb-4" data-aos="fade-up">
+                            <p class="mb-4">
                                 <strong>Prepared by:</strong>
                                 <br>
                                 Dr. Rixon O. Campbell
